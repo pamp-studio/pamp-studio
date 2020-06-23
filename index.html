@@ -31,6 +31,20 @@ body{font-family:sans-serif}
 </ul>
 
 <p>Ⓐ Code Coop <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear())</script></p>
-</body>
+<script>
+var og = document.getElementsByTagName('pre')[0].innerHTML.split('');
+var splice = [].slice.call(og);
+var ogLength = og.length;
+var i = 0;
+setInterval(function(){
+splice = og;
+splice[i] = `<span style='color:red'>${splice[i]}</span>`;
+document.getElementsByTagName('pre')[0].innerHTML = splice.join('');
+i++
+if(i==ogLength){i=0}
+},25)
+</script?
+        
+        </body>
 
 </html>
