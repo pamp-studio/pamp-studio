@@ -45,8 +45,7 @@ setInterval(function(){
 splice = og;
 splice[i] = `<span style='color:red'>${splice[i]}</span>`;
 document.getElementsByTagName('pre')[0].innerHTML = splice.join('');
-i++
-if(i==ogLength){i=0}
+i = Math.floor(Math.random() * og.length)
 },1)
 }
 </script>
