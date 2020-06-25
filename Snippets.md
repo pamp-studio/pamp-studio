@@ -9,7 +9,7 @@ WITH PASSWORD = 'password' GO
 CREATE USER LoginName FOR LOGIN LoginName 
 WITH DEFAULT_SCHEMA = dbo;
 </code></pre> 
-## add user to role(s) in 
+## add user to role(s) in db
 <pre><code>
-db ALTER ROLE db_owner ADD MEMBER LoginName;
+ALTER ROLE db_owner ADD MEMBER LoginName;
 </code></pre> 
