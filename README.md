@@ -1,6 +1,6 @@
 # code coop
 
-## rob ideas for constitution
+## rob ideas
 - global pandemic job retention fund
 - 4 day working week
 - equal pay structure
@@ -8,7 +8,7 @@
 - continuous learning/improvement
 - do work that makes world better
 
-## rob ideas for marketing
+## rob ideas
 - open source -first
 - accessibility-first user experience (w3c standards)
 - security-first data storage
