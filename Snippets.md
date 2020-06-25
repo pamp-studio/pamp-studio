@@ -2,7 +2,8 @@
 ## select master and 'new query'
 <pre><code>
 CREATE LOGIN LoginName 	
-WITH PASSWORD = 'password' GO
+WITH PASSWORD = 'password' 
+GO
 </code></pre>
 ## select your db in the dropdown and create a user mapped to a login 
 <pre><code>
