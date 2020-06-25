@@ -7,7 +7,8 @@ GO
 </code></pre>
 ## select your db in the dropdown and create a user mapped to a login 
 <pre><code>
-CREATE USER LoginName FOR LOGIN LoginName 
+CREATE USER LoginName 
+FOR LOGIN LoginName 
 WITH DEFAULT_SCHEMA = dbo;
 </code></pre> 
 ## add user to role(s) in db
