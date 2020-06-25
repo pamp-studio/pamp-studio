@@ -1,7 +1,6 @@
 # code coop
 
 ## rob ideas
-- global pandemic job retention fund
 - 4 day working week
 - equal pay structure
 - non-hierarchical team
