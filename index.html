@@ -13,39 +13,86 @@ body{font-family:sans-serif}
 
 <body>
 <pre>
-@@@@@@@   @@@@@@   @@@@@@@   @@@@@@@@      @@@@@@@   @@@@@@    @@@@@@   @@@@@@@   
-@@@@@@@@  @@@@@@@@  @@@@@@@@  @@@@@@@@     @@@@@@@@  @@@@@@@@  @@@@@@@@  @@@@@@@@  
-!@@       @@!  @@@  @@!  @@@  @@!          !@@       @@!  @@@  @@!  @@@  @@!  @@@  
-!@!       !@!  @!@  !@!  @!@  !@!          !@!       !@!  @!@  !@!  @!@  !@!  @!@  
-!@!       @!@  !@!  @!@  !@!  @!!!:!       !@!       @!@  !@!  @!@  !@!  @!@@!@!   
-!!!       !@!  !!!  !@!  !!!  !!!!!:       !!!       !@!  !!!  !@!  !!!  !!@!!!    
-:!!       !!:  !!!  !!:  !!!  !!:          :!!       !!:  !!!  !!:  !!!  !!:       
-:!:       :!:  !:!  :!:  !:!  :!:          :!:       :!:  !:!  :!:  !:!  :!:       
- ::: :::  ::::: ::   :::: ::   :: ::::      ::: :::  ::::: ::  ::::: ::   ::       
- :: :: :   : :  :   :: :  :   : :: ::       :: :: :   : :  :    : :  :    :         
+@@@@@@@   @@@@@@   @@@@@@@   @@@@@@@@ 
+@@@@@@@@  @@@@@@@@  @@@@@@@@  @@@@@@@@
+!@@       @@!  @@@  @@!  @@@  @@!     
+!@!       !@!  @!@  !@!  @!@  !@!     
+!@!       @!@  !@!  @!@  !@!  @!!!:!  
+!!!       !@!  !!!  !@!  !!!  !!!!!:  
+:!!       !!:  !!!  !!:  !!!  !!:     
+:!:       :!:  !:!  :!:  !:!  :!:     
+ ::: :::  ::::: ::   :::: ::   :: ::::
+ :: :: :   : :  :   :: :  :   : :: ::  
   </pre>
-<h2>Application Development, Glasgow</h2>
-<p><a href="/cdn-cgi/l/email-protection#cde2e2bdaca0bdb9a5a8a5a2bfa38daaa0aca4a1e3aea2a0"><span class="__cf_email__" data-cfemail="7707161a07031f121f18051937101a161e1b5914181a">[email&#160;protected]</span></a></p>
+<!-- <h2>Application Development</h2>
+<p><a href="/cdn-cgi/l/email-protection#cde2e2bdaca0bdb9a5a8a5a2bfa38daaa0aca4a1e3aea2a0"><span class="__cf_email__" data-cfemail="7707161a07031f121f18051937101a161e1b5914181a">email@nowhere</span></a></p>
 <ul>
 <li>Services: Custom Application/Web Development, Project Management, Design, Technical SEO, Copywriting, Translation, Support</li>
 <li>Tools: Dotnetcore, Node, React, React Native, Vue, Webpack, Javascript, C#, SQL</li>
 <li>Secure Hosting: Azure, Github Pages, Cloudflare, IIS, Linux</li>
 <li>Content Management Systems: Umbraco, Wordpress, Django</li>
 <li>Static Sites, Progressive Web Apps</li>
-</ul>
+</ul> -->
 
 <p>Ⓐ Code Coop <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear())</script></p>
 <script>
+
+Array.prototype.shuffle = () => {
+  var currentIndex = this.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = this[currentIndex];
+    this[currentIndex] = this[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return this;
+}
+
+
 window.onload = function(){
-var og = document.getElementsByTagName('pre')[0].innerHTML.split('').slice();
-var splice = og;
-var ogLength = og.length;
+
+const ogCharArray = document.getElementsByTagName('pre')[0].innerHTML.split('').slice();
+// const ogLineArray = [].slice.call(document.getElementsByTagName('pre')[0].innerHTML.split('\\n')).map(x=>x.split(''));
+// const ogColumns = ogLineArray[0].map((x,i)=>ogLineArray.reduce((accum,y)=>{return accum.push(y[i])},[]));
+// let sortingColumns = ogColumns
+// .map(x=>{
+//         var col = new Object();
+//         col.col = x;
+//         col.sorted = false;
+// });
+// setInterval(function(){
+//         sortingColumns = sortingColuns.map((col,i)=>{
+//         if(!col.sorted){
+//         col.col = col.col.shuffle();
+//         if(shuffle==ogColumns[i]){
+//             col.sorted=true;
+//         }
+//         }
+//         return col;
+// })
+
+// document.getElementsByTagName('pre')[0].innerHTML =         
+// Array.from(Object.keys(sortingColumns.length)).map((x,i,arr)=>arr.reduce((accum,y)=>{return accum.push(y[i])},[]));
+
+
+// },10)
+
+
+
+var ogLength = ogCharArray.length;
 var i = 0;
 setInterval(function(){
-splice = og;
+splice = ogCharArray;
 splice[i] = `<span style='color:red'>${splice[i]}</span>`;
 document.getElementsByTagName('pre')[0].innerHTML = splice.join('');
-i = Math.floor(Math.random() * og.length)
+i = Math.floor(Math.random() * ogCharArray.length)
 },1)
 }
 </script>
