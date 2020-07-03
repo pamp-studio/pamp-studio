@@ -49,8 +49,9 @@ body{font-family:sans-serif}
 <li>Static Web Sites, Progressive Web Apps, WebAPI Interactives</li>
 </ul>
 
+<footer>
 <p>Ⓐ Pasta Slug <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear())</script></p>
-
+</footer>
 <!-- <script>
         function effect(elId){
         var charray = document.getElementById(elId).innerHTML.split('')
@@ -127,14 +128,16 @@ var interval = setInterval(function(){
 function zoomFit(elId){
         var el = document.getElementById(elId);
         el.style.zoom = 1;
-        while(el.scrollWidth>el.offsetWidth){
+        while(el.scrollWidth>el.getBoundingClientRect().width){
                 el.style.zoom = el.style.zoom-0.1;
         }
 }
 
+var randomColours = ['yellow','pink','orange','yellowgreen']
+
 window.onload = function(){
         effect('effect');
-        document.body.style.backgroundColor = 'pink';
+        document.body.style.backgroundColor = randomColours[Math.round(randomColours.length*Math.random())];
 }
 
 function init(){
