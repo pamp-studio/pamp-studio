@@ -12,74 +12,134 @@ body{font-family:sans-serif}
 </head>
 
 <body>
-<pre>
-@@@@@@@   @@@@@@   @@@@@@@   @@@@@@@@ 
-@@@@@@@@  @@@@@@@@  @@@@@@@@  @@@@@@@@
-!@@       @@!  @@@  @@!  @@@  @@!     
-!@!       !@!  @!@  !@!  @!@  !@!     
-!@!       @!@  !@!  @!@  !@!  @!!!:!  
-!!!       !@!  !!!  !@!  !!!  !!!!!:  
-:!!       !!:  !!!  !!:  !!!  !!:     
-:!:       :!:  !:!  :!:  !:!  :!:     
- ::: :::  ::::: ::   :::: ::   :: ::::
- :: :: :   : :  :   :: :  :   : :: ::  
-  </pre>
-<h2>Application Development</h2>
-<p><a href="/cdn-cgi/l/email-protection#cde2e2bdaca0bdb9a5a8a5a2bfa38daaa0aca4a1e3aea2a0"><span class="__cf_email__" data-cfemail="7707161a07031f121f18051937101a161e1b5914181a">email@nowhere</span></a></p>
+<main id='effect'>
+<pre id='logo'>
+        _          _                  _          _            _          
+        /\ \       / /\               / /\       /\ \         / /\        
+       /  \ \     / /  \             / /  \      \_\ \       / /  \       
+      / /\ \ \   / / /\ \           / / /\ \__   /\__ \     / / /\ \      
+     / / /\ \_\ / / /\ \ \         / / /\ \___\ / /_ \ \   / / /\ \ \     
+    / / /_/ / // / /  \ \ \        \ \ \ \/___// / /\ \ \ / / /  \ \ \    
+   / / /__\/ // / /___/ /\ \        \ \ \     / / /  \/_// / /___/ /\ \   
+  / / /_____// / /_____/ /\ \   _    \ \ \   / / /      / / /_____/ /\ \  
+ / / /      / /_________/\ \ \ /_/\__/ / /  / / /      / /_________/\ \ \ 
+/ / /      / / /_       __\ \_\\ \/___/ /  /_/ /      / / /_       __\ \_\
+\/_/       \_\___\     /____/_/ \_____\/   \_\/       \_\___\     /____/_/
+        _            _       _                  _                         
+       / /\         _\ \    /\_\               /\ \                       
+      / /  \       /\__ \  / / /         _    /  \ \                      
+     / / /\ \__   / /_ \_\ \ \ \__      /\_\ / /\ \_\                     
+    / / /\ \___\ / / /\/_/  \ \___\    / / // / /\/_/                     
+    \ \ \ \/___// / /        \__  /   / / // / / ______                   
+     \ \ \     / / /         / / /   / / // / / /\_____\                  
+ _    \ \ \   / / / ____    / / /   / / // / /  \/____ /                  
+/_/\__/ / /  / /_/_/ ___/\ / / /___/ / // / /_____/ / /                   
+\ \/___/ /  /_______/\__\// / /____\/ // / /______\/ /                    
+ \_____\/   \_______\/    \/_________/ \/___________/                     
+                                                                          
+                                                         
+</pre>
+<p>  <strong>WWW/Glasgow</strong> | 
+<a href="/cdn-cgi/l/email-protection#cde2e2bdaca0bdb9a5a8a5a2bfa38daaa0aca4a1e3aea2a0"><span class="__cf_email__" data-cfemail="7707161a07031f121f18051937101a161e1b5914181a">email@nowhere</span></a></p>
 <ul>
-<li>Services: Custom Application/Web Development, Project Management, Design, Technical SEO, Copywriting, Translation, Support</li>
-<li>Tools: Dotnetcore, Node, React, React Native, Vue, Webpack, Javascript, C#, SQL</li>
-<li>Secure Hosting: Azure, Github Pages, Cloudflare, IIS, Linux</li>
+<li>Services: Custom Web Application Development, Technical Accessibility, Spider Optimisation</li>
+<li>Tools: Javascript, C#, Java, Python, SQL, .NET Core, Node, React, Vue</li>
+<li>Hosting & Security: Azure, Github, Cloudflare, Linux, Pipeline Deployment</li>
 <li>Content Management Systems: Umbraco, Wordpress, Django</li>
-<li>Static Sites, Progressive Web Apps</li>
+<li>Static Web Sites, Progressive Web Apps, WebAPI Interactives</li>
 </ul>
 
-<p>Ⓐ Code Coop <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear())</script></p>
-<script>
+<p>Ⓐ Pasta Slug <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear())</script></p>
 
-Array.prototype.shuffle = function() {
-  var i = this.length, j, temp;
-  if ( i == 0 ) return this;
-  while ( --i ) {
-     j = Math.floor( Math.random() * ( i + 1 ) );
-     temp = this[i];
-     this[i] = this[j];
-     this[j] = temp;
-  }
-  return this;
+<!-- <script>
+        function effect(elId){
+        var charray = document.getElementById(elId).innerHTML.split('')
+        .map(function(x,i){ return {id:i,char:x,pos:x=='\n'}  });
+        var charrayClone = JSON.parse(JSON.stringify(charray));
+        var random = Math.random();
+        var threshold = 1;
+        var switchy = 1
+        
+        var interval = setInterval(function(){
+                threshold -= 0.01;
+                charrayClone = JSON.parse(JSON.stringify(charray)).map(function(x,i){
+                        random = Math.random();
+                        if(random<threshold && !x.pos && !charrayClone[Math.floor(charray.length*random)].pos){
+                                x.char = switchy.toString(); //charrayClone[Math.floor(charray.length*random)]
+                        }
+                        switchy = switchy ? 0 : 1;
+                        return x;
+                })
+        
+                document.getElementById(elId).innerHTML = 
+                charrayClone.map(function(x,i){return x.char;}).join('')
+                if(threshold<0){
+                        clearInterval(interval);
+                        init()
+                }
+        },30)
+        
+        }
+        
+        window.onload = function(){
+                effect('effect');
+        }
+        
+        function init(){
+        document.getElementById('logo').onclick = function(){
+                effect('effect')
+        }
+        }
+        
+        </script> -->
+</main>
+
+<script>
+function effect(elId){
+var charray = document.getElementById(elId).innerHTML.split('')
+.map(function(x,i){ return {id:i,char:x,pos:x=='\n'}  });
+var charrayClone = JSON.parse(JSON.stringify(charray));
+var random = Math.random();
+var threshold = 1;
+var switchy = 1
+
+var interval = setInterval(function(){
+        threshold -= 0.01;
+        charrayClone = JSON.parse(JSON.stringify(charray)).map(function(x,i){
+                random = Math.random();
+                if(random<threshold && !x.pos && !charrayClone[Math.floor(charray.length*random)].pos){
+                        x.char = switchy.toString(); //charrayClone[Math.floor(charray.length*random)]
+                }
+                switchy = switchy ? 0 : 1;
+                return x;
+        })
+
+        document.getElementById(elId).innerHTML = 
+        charrayClone.map(function(x,i){return x.char;}).join('')
+        if(threshold<0){
+                clearInterval(interval);
+                init()
+        }
+},50)
+
 }
 
-function refresh(charray,og){
-        var shuffled = JSON.parse(JSON.stringify(charray.shuffle()));
-
-        shuffled = shuffled.map(function(x,i){
-                        if(charray[i].pos){
-                                x= charray[i];
-                        }
-                      x.pos = x.char==og[i].char;
-                      console.log(x.pos);
-                      return x;
-        })
-        return shuffled;
+function zoomFit(elId){
+        var el = document.getElementById(elId);
+        el.style.zoom = 1;
+        while(el.scrollWidth>el.offsetWidth){
+                el.style.zoom = el.style.zoom-0.1;
+        }
 }
 
 window.onload = function(){
+        effect('effect');
+        document.body.style.backgroundColor = 'pink';
+}
 
-var chars = document.getElementsByTagName('pre')[0].innerHTML.split('')
-.map(function(x,i){
-return {char:x,pos:x=='\n'}        
-});
-
-var charArray = JSON.parse(JSON.stringify(chars));
-
-setInterval(function(){
-        charArray = JSON.parse(JSON.stringify(refresh(charArray,chars)));
-        document.getElementsByTagName('pre')[0].innerHTML = 
-        charArray.map(function(x,i){
-                return x.char;
-        }).join('')
-},100)
-
+function init(){
+zoomFit('logo');
+document.body.style.backgroundColor = null;
 }
 
 </script>
