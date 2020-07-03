@@ -2,7 +2,6 @@
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
 <title>Code Coop - Web Development Glasgow, Scotland</title>
 
 <style>
@@ -53,60 +52,45 @@ body{font-family:sans-serif}
 <footer>
 <p>Ⓐ Pasta Slug <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear())</script></p>
 </footer>
-<!-- this code here is just here to contribute to the loading effect -->
+<!-- this code here is just here to contribute to the loading effect. it shouldn't fire -->
 <script>
-        function effect(elId){
-        var charray = document.getElementById(elId).innerHTML.split('')
-        .map(function(x,i){ return {id:i,char:x,pos:x=='\n'}  });
-        var charrayClone = JSON.parse(JSON.stringify(charray));
-        var random = Math.random();
-        var threshold = 1;
-        var switchy = 1
+        // function effect(elId){
+        // var charray = document.getElementById(elId).innerHTML.split('')
+        // .map(function(x,i){ return {id:i,char:x,pos:x=='\n'}  });
+        // var charrayClone = JSON.parse(JSON.stringify(charray));
+        // var random = Math.random();
+        // var threshold = 1;
+        // var switchy = 1
         // KILL YOUR MASTERS
         // KILL YOUR MASTERS
         // KILL YOUR MASTERS
-        // KILL YOUR MASTERS <strong>
-        // KILL YOUR MASTERS <el>
-        // KILL YOUR MASTERS
-        // KILL YOUR MASTERS
-        // KILL YOUR MASTERS
-        // KILL YOUR MASTERS
-        // KILL YOUR MASTERS
-        // KILL YOUR MASTERS
-        // KILL YOUR MASTERS
-        // KILL YOUR MASTERS
-        // KILL YOUR MASTERS
-        // KILL YOUR MASTERS
-        // KILL YOUR MASTERS
-        // KILL YOUR MASTERS
-        // KILL YOUR MASTERS
-        var interval = setInterval(function(){
-                threshold -= 0.01;
-                charrayClone = JSON.parse(JSON.stringify(charray)).map(function(x,i){
-                        random = Math.random();
-                        if(random<threshold && !x.pos && !charrayClone[Math.floor(charray.length*random)].pos){
-                                x.char = switchy.toString(); //charrayClone[Math.floor(charray.length*random)]
-                        }
-                        switchy = switchy ? 0 : 1;
-                        return x;
-                })
+        // var interval = setInterval(function(){
+        //         threshold -= 0.01;
+        //         charrayClone = JSON.parse(JSON.stringify(charray)).map(function(x,i){
+        //                 random = Math.random();
+        //                 if(random<threshold && !x.pos && !charrayClone[Math.floor(charray.length*random)].pos){
+        //                         x.char = switchy.toString();
+        //                 }
+        //                 switchy = switchy ? 0 : 1;
+        //                 return x;
+        //         })
         
-                document.getElementById(elId).innerHTML = 
-                charrayClone.map(function(x,i){return x.char;}).join('')
-                if(threshold<0){
-                        clearInterval(interval);
-                        init()
-                }
-        },30)
+        //         document.getElementById(elId).innerHTML = 
+        //         charrayClone.map(function(x,i){return x.char;}).join('')
+        //         if(threshold<0){
+        //                 clearInterval(interval);
+        //                 init()
+        //         }
+        // },30)
         
-        }
+        // }
         
         
-        function init(){
-        document.getElementById('logo').onclick = function(){
-                effect('effect')
-        }
-        }
+        // function inittttyy(){
+        // document.getElementById('logo').onclick = function(){
+        //         effect('effect')
+        // }
+        // }
         
         </script>
 </main>
