@@ -8,8 +8,13 @@
 body{
         font-family:sans-serif;
         max-width:100%;
-        overflow-x:hidden;
+        overflow:hidden;
+        overflow-y:auto;
         }
+
+footer {
+        text-align: center;
+}
 
 </style>
 
@@ -54,7 +59,7 @@ body{
 </ul>
 
 <footer>
-<p>Ⓐ Pasta Slug <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear())</script></p>
+<p><em>Ⓐ Pasta Slug <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear())</script></em></p>
 </footer>
 <!-- this code here is just here to contribute to the loading effect. it shouldn't fire -->
 <script>
@@ -131,8 +136,8 @@ var interval = setInterval(function(){
 
 function zoomFit(elId){
         var el = document.getElementById(elId);
-        el.style.zoom = 1;
-        console.log(el.scrollWidth,el.getBoundingClientRect().width)
+        el.style.zoom = 1.5;
+        console.log(el.scrollWidth,el.scrollWidth+100,el.getBoundingClientRect().width)
         while(el.scrollWidth>el.getBoundingClientRect().width){
                 el.style.zoom = el.style.zoom-0.1;
         }
@@ -144,6 +149,10 @@ window.onload = function(){
         zoomFit('logo');
         effect('effect');
         document.body.style.backgroundColor = randomColours[Math.round(randomColours.length*Math.random())];
+}
+
+window.onresize = function(){
+        zoomFit('logo');
 }
 
 function init(){
