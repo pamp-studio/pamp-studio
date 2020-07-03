@@ -16,6 +16,11 @@ footer {
         text-align: center;
 }
 
+section#stripey-canvas{
+        height:100vh;
+        width:100vw;
+}
+
 </style>
 
 </head>
@@ -23,7 +28,7 @@ footer {
 <body>
 <main id='effect'>
 <pre id='logo'>
-        _          _                  _          _            _          
+         _          _                  _          _            _          
         /\ \       / /\               / /\       /\ \         / /\        
        /  \ \     / /  \             / /  \      \_\ \       / /  \       
       / /\ \ \   / / /\ \           / / /\ \__   /\__ \     / / /\ \      
@@ -44,25 +49,30 @@ footer {
  _    \ \ \   / / / ____    / / /   / / // / /  \/____ /                  
 /_/\__/ / /  / /_/_/ ___/\ / / /___/ / // / /_____/ / /                   
 \ \/___/ /  /_______/\__\// / /____\/ // / /______\/ /                    
- \_____\/   \_______\/    \/_________/ \/___________/                     
-                                                                          
-                                                         
+ \_____\/   \_______\/    \/_________/ \/___________/                                                              
 </pre>
-<p>  <strong>WWW/Glasgow</strong> | 
+<header>
+<!-- <p><em>cooperative code, apps and websites</em><br/> -->
+<br/>Scotland/Glasgow: 
 <a href="/cdn-cgi/l/email-protection#cde2e2bdaca0bdb9a5a8a5a2bfa38daaa0aca4a1e3aea2a0"><span class="__cf_email__" data-cfemail="7707161a07031f121f18051937101a161e1b5914181a">email@nowhere</span></a></p>
 <ul>
-<li>Services: Custom Web Application Development, Technical Accessibility, Spider Optimisation</li>
-<li>Tools: Javascript, C#, Java, Python, SQL, .NET Core, Node, React, Vue</li>
-<li>Hosting & Security: Azure, Github, Cloudflare, Linux, Pipeline Deployment</li>
-<li>Content Management Systems: Umbraco, Wordpress, Django</li>
-<li>Static Web Sites, Progressive Web Apps, WebAPI Interactives</li>
+<li>Web Application Development, UX, Technical Accessibility, Spider Optimisation</li>
+<li>Javascript, C#, Java, Python, SQL, .NET Core, Node, React, Vue</li>
+<li>Custom Content Management System Development: Umbraco, Wordpress, Django</li>
+<li>Azure, Github, Cloudflare, Linux, Pipeline Deployment, Automated Testing</li>
+<li>Static Web Sites, Progressive Web Apps, WebAPI, Server Management & Security</li>
 </ul>
+</header>
+
+<section id='stripey-canvas'>
+
+</section>
 
 <footer>
 <p><em>Ⓐ Pasta Slug <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear())</script></em></p>
 </footer>
-<!-- this code here is just here to contribute to the loading effect. it shouldn't fire -->
 <script>
+        // // this comment code just here to add to loading effect. it shouldn't fire
         // function effect(elId){
         // var charray = document.getElementById(elId).innerHTML.split('')
         // .map(function(x,i){ return {id:i,char:x,pos:x=='\n'}  });
@@ -70,9 +80,11 @@ footer {
         // var random = Math.random();
         // var threshold = 1;
         // var switchy = 1
+
         // KILL YOUR MASTERS
         // KILL YOUR MASTERS
         // KILL YOUR MASTERS
+
         // var interval = setInterval(function(){
         //         threshold -= 0.01;
         //         charrayClone = JSON.parse(JSON.stringify(charray)).map(function(x,i){
@@ -104,61 +116,6 @@ footer {
         </script>
 </main>
 
-<script>
-function effect(elId){
-var charray = document.getElementById(elId).innerHTML.split('')
-.map(function(x,i){ return {id:i,char:x,pos:x=='\n'}  });
-var charrayClone = JSON.parse(JSON.stringify(charray));
-var random = Math.random();
-var threshold = 1;
-var switchy = 1
-
-var interval = setInterval(function(){
-        threshold -= 0.01;
-        charrayClone = JSON.parse(JSON.stringify(charray)).map(function(x,i){
-                random = Math.random();
-                if(random<threshold && !x.pos && !charrayClone[Math.floor(charray.length*random)].pos){
-                        x.char = switchy.toString(); //charrayClone[Math.floor(charray.length*random)]
-                }
-                switchy = switchy ? 0 : 1;
-                return x;
-        })
-
-        document.getElementById(elId).innerHTML = 
-        charrayClone.map(function(x,i){return x.char;}).join('')
-        if(threshold<0){
-                clearInterval(interval);
-                init()
-        }
-},10000/charray.length)
-
-}
-
-function zoomFit(elId){
-        var el = document.getElementById(elId);
-        el.style.zoom = 1.5;
-        console.log(el.scrollWidth,el.scrollWidth+100,el.getBoundingClientRect().width)
-        while(el.scrollWidth>el.getBoundingClientRect().width){
-                el.style.zoom = el.style.zoom-0.1;
-        }
-}
-
-var randomColours = ['yellow','pink','yellowgreen']
-
-window.onload = function(){
-        zoomFit('logo');
-        effect('effect');
-}
-
-window.onresize = function(){
-        zoomFit('logo');
-}
-
-function init(){
-zoomFit('logo');
-document.body.style.backgroundColor = randomColours[Math.round(randomColours.length*Math.random())];
-}
-
-</script>
+<script src='script.js'></script>
         </body>
 </html>
