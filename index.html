@@ -7,6 +7,7 @@
 
 <style>
 body{font-family:sans-serif}
+
 </style>
 
 </head>
@@ -52,7 +53,8 @@ body{font-family:sans-serif}
 <footer>
 <p>Ⓐ Pasta Slug <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear())</script></p>
 </footer>
-<!-- <script>
+<!-- this code here is just here to contribute to the loading effect -->
+<script>
         function effect(elId){
         var charray = document.getElementById(elId).innerHTML.split('')
         .map(function(x,i){ return {id:i,char:x,pos:x=='\n'}  });
@@ -60,7 +62,24 @@ body{font-family:sans-serif}
         var random = Math.random();
         var threshold = 1;
         var switchy = 1
-        
+        // KILL YOUR MASTERS
+        // KILL YOUR MASTERS
+        // KILL YOUR MASTERS
+        // KILL YOUR MASTERS <strong>
+        // KILL YOUR MASTERS <el>
+        // KILL YOUR MASTERS
+        // KILL YOUR MASTERS
+        // KILL YOUR MASTERS
+        // KILL YOUR MASTERS
+        // KILL YOUR MASTERS
+        // KILL YOUR MASTERS
+        // KILL YOUR MASTERS
+        // KILL YOUR MASTERS
+        // KILL YOUR MASTERS
+        // KILL YOUR MASTERS
+        // KILL YOUR MASTERS
+        // KILL YOUR MASTERS
+        // KILL YOUR MASTERS
         var interval = setInterval(function(){
                 threshold -= 0.01;
                 charrayClone = JSON.parse(JSON.stringify(charray)).map(function(x,i){
@@ -82,9 +101,6 @@ body{font-family:sans-serif}
         
         }
         
-        window.onload = function(){
-                effect('effect');
-        }
         
         function init(){
         document.getElementById('logo').onclick = function(){
@@ -92,7 +108,7 @@ body{font-family:sans-serif}
         }
         }
         
-        </script> -->
+        </script>
 </main>
 
 <script>
@@ -128,6 +144,7 @@ var interval = setInterval(function(){
 function zoomFit(elId){
         var el = document.getElementById(elId);
         el.style.zoom = 1;
+        console.log(el.scrollWidth,el.getBoundingClientRect().width)
         while(el.scrollWidth>el.getBoundingClientRect().width){
                 el.style.zoom = el.style.zoom-0.1;
         }
@@ -136,6 +153,7 @@ function zoomFit(elId){
 var randomColours = ['yellow','pink','orange','yellowgreen']
 
 window.onload = function(){
+        zoomFit('logo');
         effect('effect');
         document.body.style.backgroundColor = randomColours[Math.round(randomColours.length*Math.random())];
 }
