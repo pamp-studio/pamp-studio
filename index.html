@@ -130,7 +130,7 @@ var interval = setInterval(function(){
                 clearInterval(interval);
                 init()
         }
-},50)
+},10000/charray.length)
 
 }
 
@@ -143,12 +143,11 @@ function zoomFit(elId){
         }
 }
 
-var randomColours = ['yellow','pink','orange','yellowgreen']
+var randomColours = ['yellow','pink','yellowgreen']
 
 window.onload = function(){
         zoomFit('logo');
         effect('effect');
-        document.body.style.backgroundColor = randomColours[Math.round(randomColours.length*Math.random())];
 }
 
 window.onresize = function(){
@@ -157,7 +156,7 @@ window.onresize = function(){
 
 function init(){
 zoomFit('logo');
-document.body.style.backgroundColor = null;
+document.body.style.backgroundColor = randomColours[Math.round(randomColours.length*Math.random())];
 }
 
 </script>
