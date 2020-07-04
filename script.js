@@ -12,7 +12,7 @@ function effect(elClass){
           charrayClone = JSON.parse(JSON.stringify(charray)).map(function(x,i){
                   random = Math.random();
                   if(random<threshold && !x.pos && !charrayClone[Math.round((charray.length-1)*random)].pos){
-                          x.char = switchy.toString();
+                          x.char = charray[Math.round((charray.length-1)*random)].char;
                   }
                   switchy = switchy ? 0 : 1;
                   return x;
