@@ -1,5 +1,6 @@
-function effect(elId){
-  var charray = document.getElementById(elId).innerHTML.split('')
+function effect(elClass){
+  var el = document.getElementsByClassName(elClass)[0];
+  var charray = el.innerHTML.split('')
   .map(function(x,i){ return {id:i,char:x,pos:x=='\n'}  });
   var charrayClone = JSON.parse(JSON.stringify(charray));
   var random = Math.random();
@@ -17,18 +18,18 @@ function effect(elId){
                   return x;
           })
   
-          document.getElementById(elId).innerHTML = 
+          el.innerHTML = 
           charrayClone.map(function(x,i){return x.char;}).join('')
           if(threshold<0){
                   clearInterval(interval);
                   init()
           }
-  },105000/charray.length)
+  },15000/charray.length)
   
   }
   
-  function zoomFit(elId){
-          var el = document.getElementById(elId);
+  function zoomFit(elClass){
+          var el = document.getElementsByClassName(elClass)[0];
           el.style.fontSize = '1em';
           console.log(el.getBoundingClientRect().width,window.innerWidth)
           while(window.innerWidth-50<el.getBoundingClientRect().width && parseFloat(el.style.fontSize.split('em')[0])>0.01){
@@ -39,8 +40,8 @@ function effect(elId){
   var randomColours = ['chocolate','blanchedalmond','cornflowerblue','azure','thistle','tomato']
   
   function init(){
-  zoomFit('logo');
-  document.body.style.backgroundColor = randomColours[Math.round(randomColours.length*Math.random())];
+    zoomFit('zoomFit');
+    document.body.style.backgroundColor = randomColours[Math.round(randomColours.length*Math.random())];
   }
 
 window.onload = function(){
@@ -48,5 +49,5 @@ window.onload = function(){
 }
 
 window.onresize = function(){
-    zoomFit('logo');
+    zoomFit('zoomFit');
 }
