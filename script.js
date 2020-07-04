@@ -29,14 +29,14 @@ function effect(elId){
   
   function zoomFit(elId){
           var el = document.getElementById(elId);
-          el.style.fontSize = '2em';
+          el.style.fontSize = '1em';
           console.log(el.getBoundingClientRect().width,window.innerWidth)
-          while(window.innerWidth<el.getBoundingClientRect().width && parseFloat(el.style.fontSize.split('em')[0])>0.01){
+          while(window.innerWidth-50<el.getBoundingClientRect().width && parseFloat(el.style.fontSize.split('em')[0])>0.01){
                   el.style.fontSize = (parseFloat(el.style.fontSize.split('em')[0])-0.01).toString()+'em';
           }
   }
   
-  var randomColours = ['yellow','pink','yellowgreen']
+  var randomColours = ['chocolate','blanchedalmond','cornflowerblue','azure','thistle','tomato']
   
   function init(){
   zoomFit('logo');
@@ -44,10 +44,9 @@ function effect(elId){
   }
 
 window.onload = function(){
-   // zoomFit('logo');
     effect('effect');
 }
 
 window.onresize = function(){
-  //  zoomFit('logo');
+    zoomFit('logo');
 }
