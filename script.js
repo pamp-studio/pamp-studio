@@ -24,7 +24,7 @@ function effect(elClass){
                   clearInterval(interval);
                   init()
           }
-  },20000/charray.length)
+  },30000/charray.length)
   
   }
   
