@@ -1,30 +1,30 @@
+function jumble(elem,charray,threshold){
+  var random = Math.random();
+
+  var charrayClone = JSON.parse(JSON.stringify(charray)).map(function(x,i,arr){
+    random = Math.random();
+    if(random<threshold && !x.pos && !arr[Math.round((charray.length-1)*random)].pos){
+            x.char = charray[Math.round((charray.length-1)*random)].char;
+    }
+    return x;
+})
+elem.innerHTML = 
+charrayClone.map(function(x,i){return x.char;}).join('')
+}
+
 function effect(elClass){
   var el = document.getElementsByClassName(elClass)[0];
   var charray = el.innerHTML.split('')
   .map(function(x,i){ return {id:i,char:x,pos:x=='\n'}  });
-  var charrayClone = JSON.parse(JSON.stringify(charray));
-  var random = Math.random();
   var threshold = 1;
-  var switchy = 1
-  
   var interval = setInterval(function(){
           threshold -= 0.01;
-          charrayClone = JSON.parse(JSON.stringify(charray)).map(function(x,i){
-                  random = Math.random();
-                  if(random<threshold && !x.pos && !charrayClone[Math.round((charray.length-1)*random)].pos){
-                          x.char = charray[Math.round((charray.length-1)*random)].char;
-                  }
-                  switchy = switchy ? 0 : 1;
-                  return x;
-          })
-  
-          el.innerHTML = 
-          charrayClone.map(function(x,i){return x.char;}).join('')
+          jumble(el,charray,threshold);
           if(threshold<0){
-                  clearInterval(interval);
-                  init()
-          }
-  },30000/charray.length)
+            clearInterval(interval);
+            init()
+      }
+  },50000/el.innerHTML.length)
   
   }
   
