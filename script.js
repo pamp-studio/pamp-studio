@@ -10,7 +10,7 @@ function effect(elId){
           threshold -= 0.01;
           charrayClone = JSON.parse(JSON.stringify(charray)).map(function(x,i){
                   random = Math.random();
-                  if(random<threshold && !x.pos && !charrayClone[Math.floor(charray.length*random)].pos){
+                  if(random<threshold && !x.pos && !charrayClone[Math.round((charray.length-1)*random)].pos){
                           x.char = switchy.toString();
                   }
                   switchy = switchy ? 0 : 1;
@@ -23,23 +23,23 @@ function effect(elId){
                   clearInterval(interval);
                   init()
           }
-  },5000/charray.length)
+  },105000/charray.length)
   
   }
   
   function zoomFit(elId){
           var el = document.getElementById(elId);
-          el.style.zoom = 1.5;
-          console.log(el.scrollWidth,el.scrollWidth+100,el.getBoundingClientRect().width)
-          while(el.scrollWidth>el.getBoundingClientRect().width){
-                  el.style.zoom = el.style.zoom-0.1;
+          el.style.fontSize = '2em';
+          console.log(el.getBoundingClientRect().width,window.innerWidth)
+          while(window.innerWidth<el.getBoundingClientRect().width && parseFloat(el.style.fontSize.split('em')[0])>0.01){
+                  el.style.fontSize = (parseFloat(el.style.fontSize.split('em')[0])-0.01).toString()+'em';
           }
   }
   
   var randomColours = ['yellow','pink','yellowgreen']
   
   function init(){
- // zoomFit('logo');
+  zoomFit('logo');
   document.body.style.backgroundColor = randomColours[Math.round(randomColours.length*Math.random())];
   }
 
