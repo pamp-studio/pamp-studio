@@ -32,7 +32,7 @@ function effect(elClass){
           var el = document.getElementsByClassName(elClass)[0];
           el.style.fontSize = '20px';
           console.log(el.getBoundingClientRect().width,window.innerWidth)
-          while(window.innerWidth-150<el.getBoundingClientRect().width && parseFloat(el.style.fontSize.split('px')[0])>10){
+          while(window.innerWidth-150<el.getBoundingClientRect().width && parseFloat(el.style.fontSize.split('px')[0])>5){
                   el.style.fontSize = (parseFloat(el.style.fontSize.split('px')[0])-1).toString()+'px';
           }
   }
