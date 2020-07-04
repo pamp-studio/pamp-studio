@@ -49,5 +49,5 @@ window.onload = function(){
 }
 
 window.onresize = function(){
-    zoomFit('logo');
+   // zoomFit('logo');
 }
