@@ -25,26 +25,30 @@ function effect(elClass){
             init()
       }
   },50000/el.innerHTML.length)
-  
   }
   
   function zoomFit(elClass){
           var el = document.getElementsByClassName(elClass)[0];
+          var elParent = el.parentNode;
           el.style.fontSize = '20px';
-          console.log(el.getBoundingClientRect().width,window.innerWidth)
-          while(window.innerWidth-50<el.getBoundingClientRect().width && parseFloat(el.style.fontSize.split('px')[0])>5){
+          while((window.innerWidth-50<el.getBoundingClientRect().width || 
+          el.getBoundingClientRect().height-50 > elParent.offsetHeight) && 
+          parseFloat(el.style.fontSize.split('px')[0])>5)
+          {
                   el.style.fontSize = (parseFloat(el.style.fontSize.split('px')[0])-1).toString()+'px';
           }
-          el.style.top = window.innerHeight/2 - (el.getBoundingClientRect().height/2)
+          el.style.top = window.innerHeight/2 - 
+          el.getBoundingClientRect().height/2 -
+          elParent.offsetTop
+
+
   }
   
   var randomColours = ['chocolate','cornflowerblue','thistle','tomato','pink','yellowgreen']
   document.body.style.backgroundColor = randomColours[Math.floor(randomColours.length*Math.random())];
+  
   function init(){
     zoomFit('zoomFit');
-
-   // document.getElementById('stripey-canvas').style.color = 'white';//randomColours[Math.round(randomColours.length*Math.random())];
-
   }
 
 window.onload = function(){
