@@ -24,16 +24,16 @@ function effect(elClass){
                   clearInterval(interval);
                   init()
           }
-  },25000/charray.length)
+  },20000/charray.length)
   
   }
   
   function zoomFit(elClass){
           var el = document.getElementsByClassName(elClass)[0];
-          el.style.fontSize = '1em';
+          el.style.fontSize = '15px';
           console.log(el.getBoundingClientRect().width,window.innerWidth)
-          while(window.innerWidth-50<el.getBoundingClientRect().width && parseFloat(el.style.fontSize.split('em')[0])>0.5){
-                  el.style.fontSize = (parseFloat(el.style.fontSize.split('em')[0])-0.01).toString()+'em';
+          while(window.innerWidth-150<el.getBoundingClientRect().width && parseFloat(el.style.fontSize.split('px')[0])>10){
+                  el.style.fontSize = (parseFloat(el.style.fontSize.split('px')[0])-1).toString()+'px';
           }
   }
   
@@ -45,9 +45,10 @@ function effect(elClass){
   }
 
 window.onload = function(){
-    effect('effect');
 }
 
 window.onresize = function(){
     zoomFit('zoomFit');
 }
+
+effect('effect');
