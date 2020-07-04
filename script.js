@@ -39,7 +39,7 @@ function effect(elId){
   var randomColours = ['yellow','pink','yellowgreen']
   
   function init(){
-  zoomFit('logo');
+ // zoomFit('logo');
   document.body.style.backgroundColor = randomColours[Math.round(randomColours.length*Math.random())];
   }
 
@@ -49,5 +49,5 @@ window.onload = function(){
 }
 
 window.onresize = function(){
-   // zoomFit('logo');
+  //  zoomFit('logo');
 }
