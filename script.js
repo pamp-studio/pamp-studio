@@ -35,19 +35,15 @@ function effect(elClass){
           while(window.innerWidth-50<el.getBoundingClientRect().width && parseFloat(el.style.fontSize.split('px')[0])>5){
                   el.style.fontSize = (parseFloat(el.style.fontSize.split('px')[0])-1).toString()+'px';
           }
+          el.style.top = window.innerHeight/2 - (el.getBoundingClientRect().height/2)
   }
   
   var randomColours = ['chocolate','cornflowerblue','thistle','tomato','pink','yellowgreen']
-  
+  document.body.style.backgroundColor = randomColours[Math.floor(randomColours.length*Math.random())];
   function init(){
     zoomFit('zoomFit');
-    document.body.style.backgroundColor = randomColours[Math.floor(randomColours.length*Math.random())];
-    document.getElementById('services').style.backgroundColor = randomColours[Math.floor(randomColours.length*Math.random())];
-    document.getElementById('header').style.backgroundColor = randomColours[Math.floor(randomColours.length*Math.random())];
 
-  //  document.body.querySelectorAll('main h1')[0].style.backgroundColor = 'black';// randomColours[Math.round(randomColours.length*Math.random())];
-    document.getElementById('stripey-canvas').style.color = 'white';//randomColours[Math.round(randomColours.length*Math.random())];
-  //  document.getElementById('stripey-canvas').style.display = 'none'; 
+   // document.getElementById('stripey-canvas').style.color = 'white';//randomColours[Math.round(randomColours.length*Math.random())];
 
   }
 
@@ -57,5 +53,6 @@ window.onload = function(){
 window.onresize = function(){
     zoomFit('zoomFit');
 }
-
+zoomFit('zoomFit');
 effect('effect');
+zoomFit('zoomFit');

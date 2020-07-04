@@ -6,16 +6,19 @@
 
 <style>
 
-/* *{padding:0;} */
+*{overflow: hidden;
+  overflow-y: auto;}
 
 body{
         font-family:sans-serif;
         max-width:100%;
-        overflow: hidden;
-        overflow-y: auto;
         }
 
-header{ padding: 3px;}
+header{ 
+        padding: 3px; 
+        background:white;
+        opacity:0.8;
+}
 
 main h1 {
 
@@ -34,14 +37,16 @@ footer {
 }
 
 section#stripey-canvas{
+        color:white;
         height:100vh;
-        max-height: 500px;
+        max-height: 400px;
         width:100vw;
 }
 
 section#services{
         padding: 3px;
-        opacity:0.6;
+        opacity:0.8;
+        background:white;
 }
 
 pre#logo {
@@ -57,17 +62,15 @@ small{font-size:50%;}
 </head>
 
 <body>
-<main class='effect'>
+<main class=''>
 <header id='header'>
         <h1>Pasta Slug <small><a href="/cdn-cgi/l/email-protection#cde2e2bdaca0bdb9a5a8a5a2bfa38daaa0aca4a1e3aea2a0"><span class="__cf_email__" data-cfemail="7707161a07031f121f18051937101a161e1b5914181a">email@nowhere.net</span></a></p>
         </small></h1>
-<span>Agile Web Dev Coop, Scotland/Glasgow: 
-</span>
+<p>Agile Web Dev Cooperative</p>
 </header>
 
 <section id='stripey-canvas'>
-        
-        <pre id='logo' class='zoomFit'>
+        <pre id='logo' class='zoomFit effect'>
                 _          _                  _          _            _          
                /\ \       / /\               / /\       /\ \         / /\        
               /  \ \     / /  \             / /  \      \_\ \       / /  \       
@@ -90,6 +93,7 @@ small{font-size:50%;}
        /_/\__/ / /  / /_/_/ ___/\ / / /___/ / // / /_____/ / /                   
        \ \/___/ /  /_______/\__\// / /____\/ // / /______\/ /                    
         \_____\/   \_______\/    \/_________/ \/___________/</pre>
+
 </section>
 <section id='services'>
         <ul>
