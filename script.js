@@ -44,7 +44,7 @@ function effect(elId){
   }
 
 window.onload = function(){
-    zoomFit('logo');
+   // zoomFit('logo');
     effect('effect');
 }
 
