@@ -24,7 +24,7 @@ function jumbleAnimation(elClass){
             clearInterval(interval);
             init()
       }
-  },10000/el.innerHTML.length)
+  },50000/el.innerHTML.length)
   }
 
   function jumbleScroll(elClass){
@@ -32,14 +32,13 @@ function jumbleAnimation(elClass){
         var charray = el.innerHTML.split('')
         .map(function(x,i){ return {id:i,char:x,pos:x=='\n'}  });
         var threshold = 1;
+        var interval = setInterval(function(){
+          threshold=1;
+            },10000)
         window.onscroll = function(){
-                threshold -= 0.01;
-                jumble(el,charray,threshold);
-                if(threshold<0){
-                  clearInterval(interval);
-                  init()
-            }
-        }
+          threshold -= 0.01;
+          jumble(el,charray,threshold);
+  }
   }
   
   function zoomFit(elClass){
@@ -76,6 +75,7 @@ function jumbleAnimation(elClass){
 window.onresize = function(){
     zoomFit('zoomFit');
 }
+
 
 zoomFit('zoomFit');
 jumbleAnimation('effect');
