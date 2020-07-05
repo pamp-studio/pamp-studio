@@ -34,7 +34,7 @@ function jumbleAnimation(elClass){
         var threshold = 1;
         var interval = setInterval(function(){
           threshold=1;
-            },10000)
+            },20000)
         window.onscroll = function(){
           threshold -= 0.01;
           jumble(el,charray,threshold);
@@ -58,7 +58,6 @@ function jumbleAnimation(elClass){
           el.getBoundingClientRect().width/2 +
           elParent.offsetLeft
           el.style.visibility = 'visible';
-
 
   }
   
