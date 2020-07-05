@@ -40,6 +40,10 @@ function effect(elClass){
           el.style.top = elParent.getBoundingClientRect().height/2 - 
           el.getBoundingClientRect().height/2 +
           elParent.offsetTop
+          el.style.left = elParent.getBoundingClientRect().width/2 - 
+          el.getBoundingClientRect().width/2 +
+          elParent.offsetLeft
+
 
 
   }
