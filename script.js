@@ -34,7 +34,7 @@ function jumbleAnimation(elClass){
         var threshold = 1;
         var interval = setInterval(function(){
           threshold=1;
-            },20000)
+            },10000)
         window.onscroll = function(){
           threshold -= 0.01;
           jumble(el,charray,threshold);
@@ -78,5 +78,8 @@ window.onresize = function(){
 
 zoomFit('zoomFit');
 jumbleAnimation('effect');
-jumbleScroll('effect');
+setTimeout(function(){
+  jumbleScroll('effect');
+},5000)
+
 
