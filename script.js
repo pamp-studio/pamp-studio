@@ -37,8 +37,8 @@ function effect(elClass){
           {
                   el.style.fontSize = (parseFloat(el.style.fontSize.split('px')[0])-1).toString()+'px';
           }
-          el.style.top = window.innerHeight/2 - 
-          el.getBoundingClientRect().height/2 -
+          el.style.top = elParent.getBoundingClientRect().height/2 - 
+          el.getBoundingClientRect().height/2 +
           elParent.offsetTop
 
 
