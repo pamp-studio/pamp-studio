@@ -1,0 +1,61 @@
+body{
+    font-family:sans-serif;
+    max-width:100%;
+    overflow: hidden;
+overflow-y: auto;
+    }
+
+header{ 
+    padding: 3px; 
+    background:white;
+    opacity:0.8;
+}
+
+header nav {
+    position:absolute;
+    top:0;
+    right:0;
+    padding:10px;
+}
+
+header h1 {
+
+color:black;
+width:100%;
+margin:0px;
+padding:0px;
+}
+
+header p {
+    margin:0px;
+    padding:0px;}
+
+
+footer {
+    text-align: center;
+    bottom:0;
+    left:0;
+}
+
+section#logo-container{
+    color:black;
+    height:100vh;
+    max-height: 400px;
+    width:100vw;
+    font-weight: 900;
+}
+
+section#services{
+    padding: 3px;
+    opacity:0.8;
+    background:white;
+}
+
+pre#logo {
+    width: fit-content;
+    position:fixed;
+    z-index:-1;
+    visibility: hidden;
+}
+
+small{font-size:50%;}
