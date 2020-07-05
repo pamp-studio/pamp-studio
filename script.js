@@ -57,7 +57,7 @@ function jumbleAnimation(elClass){
           el.style.left = elParent.getBoundingClientRect().width/2 - 
           el.getBoundingClientRect().width/2 +
           elParent.offsetLeft
-
+          el.style.visibility = 'visible';
 
 
   }
