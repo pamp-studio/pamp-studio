@@ -39,6 +39,7 @@ footer {
 
 section#logo-container{
     color:black;
+    text-shadow:2px 2px white;
     height:100vh;
     max-height: 400px;
     width:100vw;

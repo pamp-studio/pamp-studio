@@ -12,7 +12,7 @@ elem.innerHTML =
 charrayClone.map(function(x,i){return x.char;}).join('')
 }
 
-function jumbleAnimation(elClass){
+function jumbleAnimation(elClass,intervalTime,reInit){
   var el = document.getElementsByClassName(elClass)[0];
   var charray = el.innerHTML.split('')
   .map(function(x,i){ return {id:i,char:x,pos:x=='\n'}  });
@@ -22,9 +22,11 @@ function jumbleAnimation(elClass){
           jumble(el,charray,threshold);
           if(threshold<0){
             clearInterval(interval);
-            init()
+            if(reInit){
+              document.location.reload()
+            }
       }
-  },50000/el.innerHTML.length)
+  },intervalTime)
   }
 
   function jumbleScroll(elClass){
@@ -44,30 +46,35 @@ function jumbleAnimation(elClass){
   function zoomFit(elClass){
           var el = document.getElementsByClassName(elClass)[0];
           var elParent = el.parentNode;
+          var minFontPix = 5;
           el.style.fontSize = '20px';
+
           while((window.innerWidth<el.getBoundingClientRect().width || 
           el.getBoundingClientRect().height + elParent.offsetTop > elParent.offsetHeight) && 
-          parseFloat(el.style.fontSize.split('px')[0])>5)
+          parseFloat(el.style.fontSize.split('px')[0])>minFontPix)
           {
-                  el.style.fontSize = (parseFloat(el.style.fontSize.split('px')[0])-1).toString()+'px';
+            el.style.fontSize = (parseFloat(el.style.fontSize.split('px')[0])-1).toString()+'px';
           }
-          el.style.top = elParent.getBoundingClientRect().height/2 - 
-          el.getBoundingClientRect().height/2 +
-          elParent.offsetTop
-          el.style.left = elParent.getBoundingClientRect().width/2 - 
-          el.getBoundingClientRect().width/2 +
-          elParent.offsetLeft
+
+          el.style.top = ((elParent.getBoundingClientRect().height+elParent.offsetTop)/2) + 
+          elParent.offsetTop/2 - 20 - 
+          (el.getBoundingClientRect().height/2);
+
+          el.style.left = (elParent.getBoundingClientRect().width/2) - 
+          (el.getBoundingClientRect().width/2) +
+          elParent.offsetLeft;
           el.style.visibility = 'visible';
 
   }
   
-  var randomColours = ['chocolate','cornflowerblue','thistle','tomato','pink','yellowgreen']
-  document.body.style.backgroundColor = randomColours[Math.floor(randomColours.length*Math.random())];
-  //document.getElementById('').style.backgroundColor = randomColours[Math.floor(randomColours.length*Math.random())];
-
-  
   function init(){
+    var randomColours = ['chocolate','cornflowerblue','thistle','tomato','pink','yellowgreen']
+    document.body.style.backgroundColor = randomColours[Math.floor(randomColours.length*Math.random())];
     zoomFit('zoomFit');
+    jumbleAnimation('effect',10,false);
+    setTimeout(function(){
+      jumbleScroll('effect');
+    },5000)
   }
 
 
@@ -75,11 +82,10 @@ window.onresize = function(){
     zoomFit('zoomFit');
 }
 
+document.getElementById('regenerate-site').onclick = function(){
+  jumbleAnimation('container',20,true);
+}
 
-zoomFit('zoomFit');
-jumbleAnimation('effect');
-setTimeout(function(){
-  jumbleScroll('effect');
-},5000)
+init();
 
 
