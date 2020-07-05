@@ -12,7 +12,7 @@ elem.innerHTML =
 charrayClone.map(function(x,i){return x.char;}).join('')
 }
 
-function effect(elClass){
+function jumbleAnimation(elClass){
   var el = document.getElementsByClassName(elClass)[0];
   var charray = el.innerHTML.split('')
   .map(function(x,i){ return {id:i,char:x,pos:x=='\n'}  });
@@ -25,6 +25,21 @@ function effect(elClass){
             init()
       }
   },10000/el.innerHTML.length)
+  }
+
+  function jumbleScroll(elClass){
+        var el = document.getElementsByClassName(elClass)[0];
+        var charray = el.innerHTML.split('')
+        .map(function(x,i){ return {id:i,char:x,pos:x=='\n'}  });
+        var threshold = 1;
+        window.onscroll = function(){
+                threshold -= 0.01;
+                jumble(el,charray,threshold);
+                if(threshold<0){
+                  clearInterval(interval);
+                  init()
+            }
+        }
   }
   
   function zoomFit(elClass){
@@ -57,14 +72,12 @@ function effect(elClass){
     zoomFit('zoomFit');
   }
 
-window.onload = function(){
-}
 
 window.onresize = function(){
     zoomFit('zoomFit');
 }
 
 zoomFit('zoomFit');
-effect('effect');
-zoomFit('zoomFit');
+jumbleAnimation('effect');
+jumbleScroll('effect');
 
