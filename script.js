@@ -30,14 +30,21 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   }
 
   function jumbleScroll(elClass){
-        var el = document.getElementsByClassName(elClass)[0];
+        var el = document.getElementsByClassName(elClass)[0]; 
+        var elParent = el.parentNode;
+
         var charray = el.innerHTML.split('')
         .map(function(x,i){ return {id:i,char:x,pos:x=='\n'}  });
         var threshold = 1;
         var interval = setInterval(function(){
           threshold=1;
             },10000)
-        window.onscroll = function(){
+        window.onscroll = function(e){
+          var scrollYLimit = elParent.offsetTop+(elParent.offsetHeight/2);
+          var scrollYCenter = window.outerHeight/2; //ahhhhh
+           var elCenter = el.offsetTop+(el.getBoundingClientRect().height/2);
+
+          console.log(elParentCenter,elCenter,elParentCenter-elCenter)
           threshold -= 0.01;
           jumble(el,charray,threshold);
   }
@@ -46,6 +53,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   function zoomFit(elClass){
           var el = document.getElementsByClassName(elClass)[0];
           var elParent = el.parentNode;
+          elParent.style.height = window.innerHeight - elParent.offsetTop;
           var minFontPix = 5;
           el.style.fontSize = '20px';
 
@@ -75,6 +83,11 @@ function jumbleAnimation(elClass,intervalTime,reInit){
     setTimeout(function(){
       jumbleScroll('effect');
     },5000)
+
+    document.getElementById('regenerate-site').onclick = function(){
+      jumbleAnimation('container',40,true);
+    }
+
   }
 
 
@@ -82,9 +95,7 @@ window.onresize = function(){
     zoomFit('zoomFit');
 }
 
-document.getElementById('regenerate-site').onclick = function(){
-  jumbleAnimation('container',20,true);
-}
+
 
 init();
 
