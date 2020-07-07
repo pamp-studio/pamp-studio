@@ -32,13 +32,13 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   function jumbleScroll(elClass){
         var el = document.getElementsByClassName(elClass)[0]; 
         var elParent = el.parentNode;
-
         var charray = el.innerHTML.split('')
         .map(function(x,i){ return {id:i,char:x,pos:x=='\n'}  });
         var threshold = 1;
+
         window.onscroll = function(e){
           var scrollYLimit = elParent.offsetTop+(elParent.offsetHeight/2);
-          threshold = window.scrollY/scrollYLimit;
+          threshold = (window.scrollY*1)/scrollYLimit;
           jumble(el,charray,threshold);
         }
   }
@@ -69,13 +69,11 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   }
   
   function init(){
-    var randomColours = ['cornflowerblue','thistle','tomato','pink','yellowgreen']
+    var randomColours = ['cornflowerblue','thistle','tomato','pink','yellowgreen'];
     document.body.style.backgroundColor = randomColours[Math.floor(randomColours.length*Math.random())];
     zoomFit('zoomFit');
     jumbleAnimation('effect',1,false);
-   // setTimeout(function(){
-      jumbleScroll('effect');
-  //  },5000)
+    jumbleScroll('effect');
 
     document.getElementById('regenerate-site').onclick = function(){
       document.body.style.backgroundColor = null;
@@ -88,7 +86,6 @@ function jumbleAnimation(elClass,intervalTime,reInit){
 window.onresize = function(){
     zoomFit('zoomFit');
 }
-
 
 
 init();
