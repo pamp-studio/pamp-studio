@@ -36,18 +36,11 @@ function jumbleAnimation(elClass,intervalTime,reInit){
         var charray = el.innerHTML.split('')
         .map(function(x,i){ return {id:i,char:x,pos:x=='\n'}  });
         var threshold = 1;
-        var interval = setInterval(function(){
-          threshold=1;
-            },10000)
         window.onscroll = function(e){
           var scrollYLimit = elParent.offsetTop+(elParent.offsetHeight/2);
-          var scrollYCenter = window.outerHeight/2; //ahhhhh
-           var elCenter = el.offsetTop+(el.getBoundingClientRect().height/2);
-
-          console.log(elParentCenter,elCenter,elParentCenter-elCenter)
-          threshold -= 0.01;
+          threshold = window.scrollY/scrollYLimit;
           jumble(el,charray,threshold);
-  }
+        }
   }
   
   function zoomFit(elClass){
@@ -76,15 +69,16 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   }
   
   function init(){
-    var randomColours = ['chocolate','cornflowerblue','thistle','tomato','pink','yellowgreen']
+    var randomColours = ['cornflowerblue','thistle','tomato','pink','yellowgreen']
     document.body.style.backgroundColor = randomColours[Math.floor(randomColours.length*Math.random())];
     zoomFit('zoomFit');
-    jumbleAnimation('effect',10,false);
-    setTimeout(function(){
+    jumbleAnimation('effect',1,false);
+   // setTimeout(function(){
       jumbleScroll('effect');
-    },5000)
+  //  },5000)
 
     document.getElementById('regenerate-site').onclick = function(){
+      document.body.style.backgroundColor = null;
       jumbleAnimation('container',40,true);
     }
 

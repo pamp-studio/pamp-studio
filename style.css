@@ -52,6 +52,10 @@ section#services{
     background:white;
 }
 
+section#services ul li{
+    list-style-type:circle;
+}
+
 pre#logo {
     width: fit-content;
     position:fixed;
