@@ -38,7 +38,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
 
         window.onscroll = function(e){
           var scrollYLimit = elParent.offsetTop+(elParent.offsetHeight/2);
-          threshold = (window.scrollY*1)/scrollYLimit;
+          threshold = (window.pageYOffset*1)/scrollYLimit;
           jumble(el,charray,threshold);
         }
   }
@@ -62,8 +62,8 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           (el.getBoundingClientRect().height/2);
 
           el.style.left = (elParent.getBoundingClientRect().width/2) - 
-          (el.getBoundingClientRect().width/2) +
-          elParent.offsetLeft;
+          (el.getBoundingClientRect().width/2);
+          // + elParent.offsetLeft;
           el.style.visibility = 'visible';
 
   }
