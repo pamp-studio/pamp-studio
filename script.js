@@ -29,6 +29,14 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   },intervalTime)
   }
 
+
+    var counts = [].slice.call(document.getElementsByClassName('logo-container')).map(function(x){return x.offsetTop}),
+    goal = window.scrollY;
+    var closest = counts.reduce(function(prev, curr) {
+      return (Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev);
+    });    
+    
+
   function jumbleScroll(elClass){
         var el = document.getElementsByClassName(elClass)[0]; 
         var elParent = el.parentNode;

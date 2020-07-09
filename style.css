@@ -2,11 +2,11 @@ body{
     font-family:sans-serif;
     max-width:100%;
     overflow: hidden;
-overflow-y: auto;
+    overflow-y: auto;
     }
 
 header{ 
-    padding: 3px; 
+    padding: 10px; 
     background:white;
     opacity:0.8;
 }
@@ -28,7 +28,8 @@ padding:0px;
 
 header p {
     margin:0px;
-    padding:0px;}
+    padding:0px;
+}
 
 
 footer {
@@ -37,7 +38,7 @@ footer {
     left:0;
 }
 
-section#logo-container{
+section.logo-container{
     color:black;
     text-shadow:2px 2px white;
     height:100vh;
@@ -46,13 +47,13 @@ section#logo-container{
     font-weight: 900;
 }
 
-section#services{
+section.services{
     padding: 3px;
     opacity:0.8;
     background:white;
 }
 
-section#services ul li{
+section.services ul li{
     list-style-type:circle;
 }
 
