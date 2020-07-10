@@ -30,23 +30,29 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   }
 
 
-    var counts = [].slice.call(document.getElementsByClassName('logo-container')).map(function(x){return x.offsetTop}),
-    goal = window.scrollY;
-    var closest = counts.reduce(function(prev, curr) {
-      return (Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev);
-    });    
+  
     
 
   function jumbleScroll(elClass){
-        var el = document.getElementsByClassName(elClass)[0]; 
-        var elParent = el.parentNode;
-        var charray = el.innerHTML.split('')
-        .map(function(x,i){ return {id:i,char:x,pos:x=='\n'}  });
-        var threshold = 1;
+        var el = document.getElementsByClassName(elClass)[0];
+        var logoContainers = [].slice.call(document.getElementsByClassName('logo-container'));
+        var counts = logoContainers.map(function(x){return x.offsetTop});
 
         window.onscroll = function(e){
+          var windowScrollY = window.scrollY;
+          var closest = counts.reduce(function(prev, curr) {
+            return (Math.abs(curr - windowScrollY) < Math.abs(prev - windowScrollY) ? curr : prev);
+          });
+  
+          var elParent = logoContainers.filter(function(x){return x.offsetTop==closest})[0];
+
+          var charray = el.innerHTML.split('')
+          .map(function(x,i){ return {id:i,char:x,pos:x=='\n'}  });
+          var threshold = 1;
+
           var scrollYLimit = elParent.offsetTop+(elParent.offsetHeight/2);
           threshold = (window.pageYOffset*1)/scrollYLimit;
+          
           jumble(el,charray,threshold);
         }
   }
@@ -66,8 +72,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           }
 
           el.style.top = ((elParent.getBoundingClientRect().height+elParent.offsetTop)/2) + 
-          elParent.offsetTop/2 - 20 - 
-          (el.getBoundingClientRect().height/2);
+          elParent.offsetTop/2 - 20 - (el.getBoundingClientRect().height/2);
 
           el.style.left = (elParent.getBoundingClientRect().width/2) - 
           (el.getBoundingClientRect().width/2);
