@@ -37,6 +37,8 @@ function jumbleAnimation(elClass,intervalTime,reInit){
         var el = document.getElementsByClassName(elClass)[0];
         var logoContainers = [].slice.call(document.getElementsByClassName('logo-container'));
         var counts = logoContainers.map(function(x){return x.offsetTop});
+        
+        var charray = el.innerHTML.split('').map(function(x,i){ return {id:i,char:x,pos:x=='\n'}});
 
         window.onscroll = function(e){
           var windowScrollY = window.scrollY;
@@ -45,21 +47,17 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           });
   
           var elParent = logoContainers.filter(function(x){return x.offsetTop==closest})[0];
-
-          var charray = el.innerHTML.split('')
-          .map(function(x,i){ return {id:i,char:x,pos:x=='\n'}  });
-          var threshold = 1;
-
-          var scrollYLimit = elParent.offsetTop+(elParent.offsetHeight/2);
-          threshold = (window.pageYOffset*1)/scrollYLimit;
-          
+          var threshold = 1;       
+          var scrollYLimit = elParent.offsetTop-((window.innerHeight - elParent.getBoundingClientRect().height)/2)
+          threshold = (window.pageYOffset*1)/(scrollYLimit);
+          console.log(window.pageYOffset,scrollYLimit,threshold,logoContainers);
           jumble(el,charray,threshold);
         }
   }
   
   function zoomFit(elClass){
           var el = document.getElementsByClassName(elClass)[0];
-          var elParent = el.parentNode;
+          var elParent =  [].slice.call(document.getElementsByClassName('logo-container'))[0];
           elParent.style.height = window.innerHeight - elParent.offsetTop;
           var minFontPix = 5;
           el.style.fontSize = '20px';
@@ -71,14 +69,13 @@ function jumbleAnimation(elClass,intervalTime,reInit){
             el.style.fontSize = (parseFloat(el.style.fontSize.split('px')[0])-1).toString()+'px';
           }
 
-          el.style.top = ((elParent.getBoundingClientRect().height+elParent.offsetTop)/2) + 
-          elParent.offsetTop/2 - 20 - (el.getBoundingClientRect().height/2);
+          el.style.top = ((elParent.getBoundingClientRect().height/2+elParent.offsetTop))  
+          - (el.getBoundingClientRect().height/2);
 
           el.style.left = (elParent.getBoundingClientRect().width/2) - 
           (el.getBoundingClientRect().width/2);
           // + elParent.offsetLeft;
           el.style.visibility = 'visible';
-
   }
   
   function init(){
