@@ -27,8 +27,8 @@ padding:0px;
 }
 
 header p {
-    margin:0px;
-    padding:0px;
+    margin:1px;
+    padding:2px;
 }
 
 
@@ -36,19 +36,19 @@ footer {
     text-align: center;
     bottom:0;
     left:0;
+    padding:3px;
+    margin-top:10px;
 }
 
 section.logo-container{
     color:black;
     text-shadow:2px 2px white;
-    height:100vh;
-    max-height: 400px;
     width:100vw;
     font-weight: 900;
 }
 
 section.services{
-    padding: 3px;
+    padding: 10px;
     opacity:0.8;
     background:white;
 }

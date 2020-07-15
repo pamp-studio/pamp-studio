@@ -1,3 +1,7 @@
+function difference(a, b) {
+  return Math.abs(a - b);
+}
+
 function jumble(elem,charray,threshold){
   var random = Math.random();
 
@@ -41,24 +45,46 @@ function jumbleAnimation(elClass,intervalTime,reInit){
         var charray = el.innerHTML.split('').map(function(x,i){ return {id:i,char:x,pos:x=='\n'}});
 
         window.onscroll = function(e){
-          var windowScrollY = window.scrollY;
+          var scrollY = window.pageYOffset;
           var closest = counts.reduce(function(prev, curr) {
-            return (Math.abs(curr - windowScrollY) < Math.abs(prev - windowScrollY) ? curr : prev);
+            return (Math.abs(curr - scrollY) < Math.abs(prev - scrollY) ? curr : prev);
           });
   
           var elParent = logoContainers.filter(function(x){return x.offsetTop==closest})[0];
-          var threshold = 1;       
-          var scrollYLimit = elParent.offsetTop-((window.innerHeight - elParent.getBoundingClientRect().height)/2)
-          threshold = (window.pageYOffset*1)/(scrollYLimit);
-          console.log(window.pageYOffset,scrollYLimit,threshold,logoContainers);
+          var thresholdRaw = 1;
+          var threshold = 1;
+
+          
+          var scrollYCenter = elParent.offsetTop-((window.innerHeight - elParent.getBoundingClientRect().height)/2)
+
+        
+          
+          var top = elParent.offsetTop - window.innerHeight > 0 ? elParent.offsetTop - window.innerHeight : 0;
+          
+          var bottom = elParent.offsetTop + window.innerHeight < document.body.scrollHeight ? elParent.offsetTop + window.innerHeight :
+          scrollYCenter;
+          
+          if(difference(top,scrollY)<difference(bottom,scrollY)){
+           threshold = (scrollY-top)/difference(scrollYCenter,top)
+          }
+          else{
+           threshold = (scrollY-bottom)/difference(scrollYCenter,bottom)
+          }
+
+          thresholdRaw = ((window.pageYOffset/scrollYCenter)*(window.pageYOffset/scrollYCenter<0?-1:1));
+       //   threshold = thresholdRaw - Math.floor(thresholdRaw);
+          console.log(window.pageYOffset,scrollYCenter,threshold,elParent);
           jumble(el,charray,threshold);
         }
   }
   
   function zoomFit(elClass){
           var el = document.getElementsByClassName(elClass)[0];
-          var elParent =  [].slice.call(document.getElementsByClassName('logo-container'))[0];
-          elParent.style.height = window.innerHeight - elParent.offsetTop;
+          var elParents = [].slice.call(document.getElementsByClassName('logo-container'));
+          var elParent =  elParents[0];
+          elParents.forEach(function(x,i,arr){
+            x.style.height = window.innerHeight - arr[i].offsetTop*2;
+          })
           var minFontPix = 5;
           el.style.fontSize = '20px';
 
@@ -69,8 +95,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
             el.style.fontSize = (parseFloat(el.style.fontSize.split('px')[0])-1).toString()+'px';
           }
 
-          el.style.top = ((elParent.getBoundingClientRect().height/2+elParent.offsetTop))  
-          - (el.getBoundingClientRect().height/2);
+          el.style.top = (window.innerHeight/2) - (el.getBoundingClientRect().height/2);
 
           el.style.left = (elParent.getBoundingClientRect().width/2) - 
           (el.getBoundingClientRect().width/2);
