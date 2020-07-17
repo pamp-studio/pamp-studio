@@ -43,7 +43,7 @@ footer {
 section.logo-container{
     color:black;
     text-shadow:2px 2px white;
-    width:100vw;
+    width:100%;
     font-weight: 900;
 }
 
@@ -64,4 +64,15 @@ pre#logo {
     visibility: hidden;
 }
 
-small{font-size:50%;}
+small{
+    font-size:50%;
+}
+
+video#minisVideo {
+    min-height: 100%;
+    min-width: 100%;
+    opacity: 0.3;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
