@@ -115,6 +115,11 @@ function jumbleAnimation(elClass,intervalTime,reInit){
       jumbleAnimation('container',40,true);
     }
 
+// for autoplay to work in ios?
+var minisVideo = document.getElementById("minisVideo");
+minisVideo.muted = true;
+minisVideo.play();
+
   }
 
 
