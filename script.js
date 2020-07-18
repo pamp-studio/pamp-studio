@@ -86,7 +86,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
             x.style.height = window.innerHeight - arr[i].offsetTop*2;
           })
           var minFontPix = 5;
-          el.style.fontSize = '20px';
+          el.style.fontSize = '40px';
 
           while((window.innerWidth<el.getBoundingClientRect().width || 
           el.getBoundingClientRect().height + elParent.offsetTop > elParent.offsetHeight) && 
@@ -104,6 +104,20 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   }
   
   function init(){
+
+    axios.get('http://artii.herokuapp.com/fonts_list').then(function(data){
+      console.log(data)
+      var word = "Pamp";
+      var font = fontsAvailable[fontsAvailable.length*Math.random()]
+      axis.get('http://artii.herokuapp.com/make?text='+word+'&font='+font).then(function(asciidata){
+          console.log(asciidata);
+          document.getElementById('logo').innerHTML=asciidata;
+      })
+
+    }).catch(function(error){
+      console.log('error');
+    })
+
     var randomColours = ['cornflowerblue','thistle','tomato','pink','yellowgreen'];
     document.body.style.backgroundColor = randomColours[Math.floor(randomColours.length*Math.random())];
     zoomFit('zoomFit');
