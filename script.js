@@ -105,11 +105,11 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   
   function init(){
 
-    axios.get('http://artii.herokuapp.com/fonts_list').then(function(data){
+    axios.get('https://artii.herokuapp.com/fonts_list').then(function(data){
       console.log(data)
       var word = "Pamp";
       var font = fontsAvailable[fontsAvailable.length*Math.random()]
-      axis.get('http://artii.herokuapp.com/make?text='+word+'&font='+font).then(function(asciidata){
+      axis.get('https://artii.herokuapp.com/make?text='+word+'&font='+font).then(function(asciidata){
           console.log(asciidata);
           document.getElementById('logo').innerHTML=asciidata;
       })
