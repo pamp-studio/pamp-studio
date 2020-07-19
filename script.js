@@ -105,24 +105,28 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   
   function init(){
 
-    axios.get('https://artii.herokuapp.com/fonts_list').then(function(data){
-      console.log(data)
+    axios.get('https://cors-anywhere.herokuapp.com/https://artii.herokuapp.com/fonts_list').then(function(data){
       var word = "Pamp";
-      var font = fontsAvailable[fontsAvailable.length*Math.random()]
-      axis.get('https://artii.herokuapp.com/make?text='+word+'&font='+font).then(function(asciidata){
+      var fonts = data.data.split('\n').map(function(x){return x.trim()})
+      var font = fonts[Math.floor(fonts.length*Math.random())]
+      console.log(fonts,font)
+
+      axios.get('https://cors-anywhere.herokuapp.com/https://artii.herokuapp.com/make?text='+word+'&font='+font).then(function(asciidata){
           console.log(asciidata);
-          document.getElementById('logo').innerHTML=asciidata;
+          document.getElementById('logo').innerHTML=asciidata.data;
+          zoomFit('zoomFit');
+          jumbleAnimation('effect',1,false);
+          jumbleScroll('effect');
       })
 
     }).catch(function(error){
-      console.log('error');
+      console.log(error);
     })
 
     var randomColours = ['cornflowerblue','thistle','tomato','pink','yellowgreen'];
     document.body.style.backgroundColor = randomColours[Math.floor(randomColours.length*Math.random())];
+
     zoomFit('zoomFit');
-    jumbleAnimation('effect',1,false);
-    jumbleScroll('effect');
 
     document.getElementById('regenerate-site').onclick = function(){
       document.body.style.backgroundColor = null;
