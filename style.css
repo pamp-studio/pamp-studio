@@ -53,6 +53,9 @@ section.logo-container{
     text-shadow:2px 2px white;
     width:100%;
     font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 
 section.services{
@@ -67,8 +70,6 @@ section.services ul li{
 
 pre#logo {
     width: fit-content;
-    position:fixed;
-    z-index:-2;
     visibility: hidden;
 }
 

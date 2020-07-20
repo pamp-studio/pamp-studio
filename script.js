@@ -95,11 +95,10 @@ function jumbleAnimation(elClass,intervalTime,reInit){
             el.style.fontSize = (parseFloat(el.style.fontSize.split('px')[0])-1).toString()+'px';
           }
 
-          el.style.top = (window.innerHeight/2) - (el.getBoundingClientRect().height/2);
+      //    el.style.top = (window.innerHeight/2) - (el.getBoundingClientRect().height/2);
 
-          el.style.left = (elParent.getBoundingClientRect().width/2) - 
-          (el.getBoundingClientRect().width/2);
-          // + elParent.offsetLeft;
+     //     el.style.left = (elParent.getBoundingClientRect().width/2) - 
+     //     (el.getBoundingClientRect().width/2);
           el.style.visibility = 'visible';
   }
   

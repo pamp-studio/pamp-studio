@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>404 Error: File Not Found</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style>
+        body {
+            background-color: #FFFFFF;
+            font-family: verdana, sans-serif;
+        }
+        .error-title {
+            font-size: 22px;
+        }
+        #mydiv {
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            width:400px;
+            height:500px;
+            /*margin: 100px auto;*/
+            margin-top: -300px; /*set to a negative number 1/2 of your height*/
+            margin-left: -200px; /*set to a negative number 1/2 of your width*/
+            text-align: center;
+        }
+        
+        #paper-hole-container {
+            padding: 0px;
+            height: 400px;
+            width: 382px;
+        }
+        #paper-hole {
+            margin: 0px;
+            padding: 0px;
+            height: 400px;
+            width: 382px;
+            background-image:url(http://patorjk.com/blog/wp-content/uploads/2011/02/paper-hole.png);
+        }
+    </style>
+
+  </head>
+
+    <body>
+
+        <div id="mydiv"">
+           <span class="error-title">404 Error: File Not Found</span>
+          <p/>
+          <div id="paper-hole-container">
+              <div id="paper-hole"></div>
+          </div>
+<!-- hole image under CC-license: http://www.officialpsds.com/Paper-Hole-PSD37256.html -->
+
+          <p/>
+          Please check the URL you followed to ensure it is correct. If the problem persists, please <a href="http://patorjk.com/blog/about/#contact">contact me</a>.
+        </div>
+
+        <script>
+            window.onload = function() {
+                var hImages = [];
+                hImages.push( "http://patorjk.com/blog/wp-content/uploads/2011/02/code.png");
+
+                var rand = Math.floor(Math.random()*hImages.length);
+                document.getElementById("paper-hole-container").style.backgroundImage = "url(" + hImages[rand] + ")";
+            };
+        </script>
+    </body>
+</html>
