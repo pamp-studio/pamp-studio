@@ -1,6 +1,6 @@
-*{
-    transition: height 1s;
-}
+/* *{
+    transition: height 1s ease-out;
+} */
 
 body{
     font-family:sans-serif;
@@ -54,11 +54,12 @@ section.logo-container{
     display: flex;
     justify-content: center;
     align-items: center; 
+    /* min-height:500px; */
 }
 
 section.services{
     padding: 10px;
-    opacity:0.8;
+    opacity:0.99;
     background:white;
 }
 

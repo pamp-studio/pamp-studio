@@ -33,10 +33,6 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   },intervalTime)
   }
 
-
-  
-    
-
   function jumbleScroll(elClass){
         var el = document.getElementsByClassName(elClass)[0];
         var logoContainers = [].slice.call(document.getElementsByClassName('logo-container'));
@@ -53,11 +49,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           var elParent = logoContainers.filter(function(x){return x.offsetTop==closest})[0];
           var thresholdRaw = 1;
           var threshold = 1;
-
-          
           var scrollYCenter = elParent.offsetTop-((window.innerHeight - elParent.getBoundingClientRect().height)/2)
-
-        
           
           var top = elParent.offsetTop - window.innerHeight > 0 ? elParent.offsetTop - window.innerHeight : 0;
           
@@ -82,9 +74,9 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           var el = document.getElementsByClassName(elClass)[0];
           var elParents = [].slice.call(document.getElementsByClassName('logo-container'));
           var elParent =  elParents[0];
-          elParents.forEach(function(x,i,arr){
-            x.style.height = window.innerHeight - arr[i].offsetTop*2;
-          })
+           elParents.forEach(function(x,i,arr){
+             x.style.height = window.innerHeight - arr[i].offsetTop*2;
+           })
           var minFontPix = 5;
           el.style.fontSize = '40px';
 
@@ -94,11 +86,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           {
             el.style.fontSize = (parseFloat(el.style.fontSize.split('px')[0])-1).toString()+'px';
           }
-// // using 
-      //    el.style.top = (window.innerHeight/2) - (el.getBoundingClientRect().height/2);
 
-     //     el.style.left = (elParent.getBoundingClientRect().width/2) - 
-     //     (el.getBoundingClientRect().width/2);
           el.style.visibility = 'visible';
   }
 
