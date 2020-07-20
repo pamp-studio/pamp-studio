@@ -94,7 +94,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           {
             el.style.fontSize = (parseFloat(el.style.fontSize.split('px')[0])-1).toString()+'px';
           }
-
+// // using 
       //    el.style.top = (window.innerHeight/2) - (el.getBoundingClientRect().height/2);
 
      //     el.style.left = (elParent.getBoundingClientRect().width/2) - 
@@ -108,7 +108,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
     ASCII.updateFont(font, function() {
         ASCII.updateDisplay();
         zoomFit('zoomFit');
-        jumbleAnimation('effect',1,false);
+       // jumbleAnimation('effect',1,false);
         jumbleScroll('effect');
     });
   };
