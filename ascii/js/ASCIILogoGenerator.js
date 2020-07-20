@@ -31,7 +31,6 @@ ASCII.fontReady = function() {
 };
 
 ASCII.getText = function(txt) {
-
     var txt = ASCII.currentFont.getText(txt);
     txt = txt.replace(/</g, "&lt;").replace(/>/g, "&gt;");
     return "<pre>" + txt + "</pre>";
