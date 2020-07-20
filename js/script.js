@@ -17,7 +17,7 @@ charrayClone.map(function(x,i){return x.char;}).join('')
 }
 
 function jumbleAnimation(elClass,intervalTime,reInit){
-  var el = document.getElementsByClassName(elClass)[0];
+  var el = document.querySelectorAll(elClass)[0];
   var charray = el.innerHTML.split('')
   .map(function(x,i){ return {id:i,char:x,pos:x=='\n'}  });
   var threshold = 1;
@@ -33,8 +33,8 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   },intervalTime)
   }
 
-  function jumbleScroll(elClass){
-        var el = document.getElementsByClassName(elClass)[0];
+  function jumbleScroll(selector){
+        var el = document.querySelectorAll(selector)[0];
         var logoContainers = [].slice.call(document.getElementsByClassName('logo-container'));
         var counts = logoContainers.map(function(x){return x.offsetTop});
         
@@ -49,23 +49,9 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           var elParent = logoContainers.filter(function(x){return x.offsetTop==closest})[0];
           var thresholdRaw = 1;
           var threshold = 1;
-          var scrollYCenter = elParent.offsetTop-((window.innerHeight - elParent.getBoundingClientRect().height)/2)
-          
-          var top = elParent.offsetTop - window.innerHeight > 0 ? elParent.offsetTop - window.innerHeight : 0;
-          
-          var bottom = elParent.offsetTop + window.innerHeight < document.body.scrollHeight ? elParent.offsetTop + window.innerHeight :
-          scrollYCenter;
-          
-          if(difference(top,scrollY)<difference(bottom,scrollY)){
-           threshold = (scrollY-top)/difference(scrollYCenter,top)
-          }
-          else{
-           threshold = (scrollY-bottom)/difference(scrollYCenter,bottom)
-          }
-
-          thresholdRaw = ((window.pageYOffset/scrollYCenter)*(window.pageYOffset/scrollYCenter<0?-1:1));
-       //   threshold = thresholdRaw - Math.floor(thresholdRaw);
-          console.log(window.pageYOffset,scrollYCenter,threshold,elParent);
+    
+          threshold = scrollY/(document.body.offsetHeight-window.innerHeight);
+          console.log(threshold,scrollY,document.body.offsetHeight,window.innerHeight)
           jumble(el,charray,threshold);
         }
   }
@@ -97,7 +83,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
         ASCII.updateDisplay();
         zoomFit('zoomFit');
        // jumbleAnimation('effect',1,false);
-        jumbleScroll('effect');
+        jumbleScroll('#logo pre');
     });
   };
   
