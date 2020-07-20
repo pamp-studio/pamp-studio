@@ -89,12 +89,12 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   
   function init(){
 
-    var randomColours = ['cornflowerblue','thistle','tomato','pink','yellowgreen'];
+    var randomColours = ['white','thistle','tomato','white','white'];
     document.body.style.backgroundColor = randomColours[Math.floor(randomColours.length*Math.random())];
 
     document.getElementById('regenerate-site').onclick = function(){
       document.body.style.backgroundColor = null;
-      jumbleAnimation('container',40,true);
+      jumbleAnimation('.container',40,true);
     }
 
 // for autoplay to work in ios?
