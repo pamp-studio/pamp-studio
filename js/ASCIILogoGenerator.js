@@ -40,15 +40,3 @@ ASCII.updateDisplay = function() {
     var output = document.getElementById("logo");
     output.innerHTML = ASCII.getText(generatePhrase);
 };
-
-(function() {
-    var updateFontRandomly = function() {
-        var randomIndex = Math.floor(Math.random()*fonts.length);
-        font = fonts[randomIndex];
-        ASCII.updateFont(font, function() {
-            ASCII.updateDisplay();   
-        });
-    };
-    setInterval(updateFontRandomly,3000);
-    updateFontRandomly();
-})();
