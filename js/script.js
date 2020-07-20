@@ -89,8 +89,8 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   
   function init(){
 
-    var randomColours = ['white','thistle','tomato','white','white'];
-    document.body.style.backgroundColor = randomColours[Math.floor(randomColours.length*Math.random())];
+    var randomColours = ['pink','thistle','tomato','yellow'];
+    document.querySelectorAll('footer')[0].style.backgroundColor = randomColours[Math.floor(randomColours.length*Math.random())];
 
     document.getElementById('regenerate-site').onclick = function(){
       document.body.style.backgroundColor = null;
