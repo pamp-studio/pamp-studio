@@ -34,24 +34,19 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   }
 
   function jumbleScroll(selector){
-        var el = document.querySelectorAll(selector)[0];
-        var logoContainers = [].slice.call(document.getElementsByClassName('logo-container'));
-        var counts = logoContainers.map(function(x){return x.offsetTop});
-        
+        var el = document.querySelectorAll(selector)[0];        
         var charray = el.innerHTML.split('').map(function(x,i){ return {id:i,char:x,pos:x=='\n'}});
 
         window.onscroll = function(e){
           var scrollY = window.pageYOffset;
-          var closest = counts.reduce(function(prev, curr) {
-            return (Math.abs(curr - scrollY) < Math.abs(prev - scrollY) ? curr : prev);
-          });
-  
-          var elParent = logoContainers.filter(function(x){return x.offsetTop==closest})[0];
-          var thresholdRaw = 1;
           var threshold = 1;
-    
-          threshold = scrollY/(document.body.offsetHeight-window.innerHeight);
-          console.log(threshold,scrollY,document.body.offsetHeight,window.innerHeight)
+          if(scrollY/((document.body.scrollHeight-window.innerHeight)/2)<1){
+              threshold =  scrollY/((document.body.scrollHeight-window.innerHeight)/2);
+          }
+          else{
+            threshold = 1-((1-(scrollY/((document.body.scrollHeight-window.innerHeight)/2)))*-1)
+          }
+          // console.log(threshold,scrollY,document.body.scrollHeight,window.innerHeight)
           jumble(el,charray,threshold);
         }
   }
@@ -60,11 +55,9 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           var el = document.getElementsByClassName(elClass)[0];
           var elParents = [].slice.call(document.getElementsByClassName('logo-container'));
           var elParent =  elParents[0];
-          //  elParents.forEach(function(x,i,arr){
-          //    x.style.height = window.innerHeight - arr[i].offsetTop*2;
-          //  })
+        
           var minFontPix = 5;
-          el.style.fontSize = '40px';
+          el.style.fontSize = '60px';
 
           while((window.innerWidth<el.getBoundingClientRect().width || 
           el.getBoundingClientRect().height > elParent.offsetHeight) && 
@@ -88,14 +81,12 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   };
   
   function init(){
-
-    var randomColours = ['pink','thistle','tomato','yellow'];
-    document.querySelectorAll('footer')[0].style.borderColor = randomColours[Math.floor(randomColours.length*Math.random())];
-
-    document.getElementById('regenerate-site').onclick = function(){
-      document.body.style.backgroundColor = null;
-      jumbleAnimation('.container',40,true);
-    }
+  var randomColours = ['pink','thistle','tomato','yellow'];
+  document.querySelectorAll('footer')[0].style.borderColor = randomColours[Math.floor(randomColours.length*Math.random())];
+  document.getElementById('regenerate-site').onclick = function(){
+  document.body.style.backgroundColor = null;
+  jumbleAnimation('.container',40,true);
+  }
 
 // for autoplay to work in ios?
 //var minisVideo = document.getElementById("minisVideo");
@@ -106,14 +97,9 @@ updateFontRandomly();
 
 setInterval(function(){
   document.getElementById('logo').style.opacity = 0;
-  updateFontRandomly()},65000);
-  }
-
-
-window.onresize = function(){
-    zoomFit('zoomFit');
+  updateFontRandomly()
+},60000);
 }
-
 
 init();
 
