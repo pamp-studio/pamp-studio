@@ -75,12 +75,12 @@ section.services{
 }
 
 section.services ul {
-    padding:0px;
+    padding:20px;
 }
 
 section.services ul li{
     list-style-type:square;
-    list-style-position:inside;
+    list-style-position:outside;
 }
 
 pre#logo {
