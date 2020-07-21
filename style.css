@@ -9,6 +9,11 @@ body{
     overflow-y: auto;
     }
 
+    main.container{
+        margin: auto;
+    max-width: 650px;
+    }
+
 header{ 
     padding: 10px; 
     background:white;
@@ -50,6 +55,8 @@ footer {
     margin-top:10px;
 }
 
+
+
 section.logo-container{
     color:black;
     text-shadow:2px 2px white;
@@ -58,7 +65,7 @@ section.logo-container{
     display: flex;
     justify-content: center;
     align-items: center; 
-    /* min-height:500px; */
+    height:500px;
 }
 
 section.services{

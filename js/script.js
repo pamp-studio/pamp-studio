@@ -60,9 +60,9 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           var el = document.getElementsByClassName(elClass)[0];
           var elParents = [].slice.call(document.getElementsByClassName('logo-container'));
           var elParent =  elParents[0];
-           elParents.forEach(function(x,i,arr){
-             x.style.height = window.innerHeight - arr[i].offsetTop*2;
-           })
+          //  elParents.forEach(function(x,i,arr){
+          //    x.style.height = window.innerHeight - arr[i].offsetTop*2;
+          //  })
           var minFontPix = 5;
           el.style.fontSize = '40px';
 
