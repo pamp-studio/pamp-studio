@@ -1,6 +1,6 @@
-/* *{
-    transition: height 1s ease-out;
-} */
+*{
+    transition: opacity 3s ease-out;
+}
 
 body{
     font-family:sans-serif;
@@ -74,12 +74,18 @@ section.services{
     background:white;
 }
 
+section.services ul {
+    padding:0px;
+}
+
 section.services ul li{
-    list-style-type:circle;
+    list-style-type:square;
+    list-style-position:inside;
 }
 
 pre#logo {
     width: fit-content;
+    opacity:0;
     visibility: hidden;
 }
 

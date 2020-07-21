@@ -72,8 +72,8 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           {
             el.style.fontSize = (parseFloat(el.style.fontSize.split('px')[0])-1).toString()+'px';
           }
-
           el.style.visibility = 'visible';
+          el.style.opacity = 1;
   }
 
   var updateFontRandomly = function() {
@@ -104,10 +104,9 @@ function jumbleAnimation(elClass,intervalTime,reInit){
 
 updateFontRandomly();
 
-setInterval(updateFontRandomly,60000);
-
-
-
+setInterval(function(){
+  document.getElementById('logo').style.opacity = 0;
+  updateFontRandomly()},65000);
   }
 
 
