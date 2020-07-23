@@ -95,6 +95,8 @@ function jumbleAnimation(elClass,intervalTime,reInit){
 
 updateFontRandomly();
 
+document.getElementById('logo').ondblclick = updateFontRandomly;
+
 setInterval(function(){
   document.getElementById('logo').style.opacity = 0;
   updateFontRandomly()
