@@ -64,6 +64,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           {
             el.style.fontSize = (parseFloat(el.style.fontSize.split('px')[0])-1).toString()+'px';
           }
+          elParent.style.height = el.getBoundingClientRect().height.toString() + 'px';
           el.style.visibility = 'visible';
           el.style.opacity = 1;
   }
@@ -74,7 +75,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
     ASCII.updateFont(font, function() {
         ASCII.updateDisplay();
         zoomFit('zoomFit');
-       // jumbleAnimation('effect',1,false);
+      //  jumbleAnimation('.effect',1,false);
         jumbleScroll('#logo pre');
     });
   };

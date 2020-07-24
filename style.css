@@ -1,5 +1,5 @@
 *{
-    transition: opacity 3s ease-out;
+    transition: height 0.5s, background-color 1s;
 }
 
 body{
@@ -83,10 +83,11 @@ section.services ul li{
     list-style-position:outside;
 }
 
-pre#logo {
+#logo {
     width: fit-content;
     opacity:0;
     visibility: hidden;
+    cursor:crosshair;
 }
 
 small{
@@ -113,7 +114,46 @@ z-index:-5;
 opacity:0.5;
 }
 
-#regenerate-site a{
+button#regenerate-site{
+    padding:5px;
+}
+
+button#regenerate-site a{
     text-decoration:none;
     font-size:0.1px;
 }
+
+.gethot span{padding:3px;}
+
+@keyframes gethotbg {
+    25%  {background-color:pink;}
+    35%  {background-color:orange;}
+    45%  {background-color: hotpink;}
+    60% {background-color: tomato;}
+    100% {background-color: red;}
+
+  }
+  
+  .gethot:hover span{
+    color: black;
+    background-color:inherit;
+    animation-name: gethotbg;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes gethotborder {
+    25%  {border-color:pink;}
+    35%  {border-color:orange;}
+    45%  {border-color: hotpink;}
+    60% {border-color: tomato;}
+    100% {border-color: red;}
+
+  }
+  
+  .gethot:hover{
+    cursor:pointer;
+    animation-name: gethotborder;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }

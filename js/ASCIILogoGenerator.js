@@ -60,7 +60,6 @@ var fonts = ["3D Diagonal.flf",
 "Dot Matrix.flf",
 "Double.flf",
 "Dr Pepper.flf",
-"Efti Water.flf",
 "Electronic.flf",
 "Elite.flf",
 "Epic.flf",
@@ -122,8 +121,8 @@ var fonts = ["3D Diagonal.flf",
 "THIS.flf",
 "Train.flf",
 "Twisted.flf"];
-var font = fonts[0];
 
+var font = fonts[0];
 var ASCII = ASCII || {};
 ASCII.fonts = {};
 ASCII.fonts.figlet = [];
