@@ -81,8 +81,8 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   };
   
   function init(){
-  var randomColour = randomColours[Math.floor(randomColours.length*Math.random())];
   var randomColours = ['pink','thistle','tomato','yellow'];
+  var randomColour = randomColours[Math.floor(randomColours.length*Math.random())];
   document.querySelectorAll('footer')[0].style.borderColor = randomColour;
   document.getElementById('logo').style.textShadow = '1px 1px '+ randomColour;
   document.getElementById('regenerate-site').onclick = function(){
