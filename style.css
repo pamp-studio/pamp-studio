@@ -1,5 +1,5 @@
 *{
-    transition: height 0.5s, background-color 1s;
+    transition: height 0.5s, background-color 1s, opacity 0.5s;
 }
 
 body{
