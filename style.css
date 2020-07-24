@@ -1,5 +1,11 @@
-*{
-    transition: height 0.5s, background-color 1s, opacity 0.5s;
+.trans-height{
+    transition: height 0.5s;
+}
+.trans-bgcolor{
+    transition: background-color 1s;
+}
+.trans-opacity{
+    transition: opacity 0.5s;
 }
 
 body{
@@ -10,7 +16,7 @@ body{
     }
 
     main.container{
-        margin: auto;
+    margin: auto;
     max-width: 650px;
     }
 
@@ -54,8 +60,6 @@ footer {
     padding:10px;
     margin-top:10px;
 }
-
-
 
 section.logo-container{
     color:black;
@@ -123,7 +127,9 @@ button#regenerate-site a{
     font-size:0.1px;
 }
 
-.gethot span{padding:3px;}
+.gethot span{
+    padding:3px;
+}
 
 @keyframes gethotbg {
     25%  {background-color:pink;}
@@ -131,7 +137,6 @@ button#regenerate-site a{
     45%  {background-color: hotpink;}
     60% {background-color: tomato;}
     100% {background-color: red;}
-
   }
   
   .gethot:hover span{

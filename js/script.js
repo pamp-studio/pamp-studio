@@ -57,6 +57,8 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           var elParent =  elParents[0];
           var minFontPix = 5;
           el.style.fontSize = '60px';
+          elParent.classList.remove('trans-height');
+          elParent.style.height = '500px';
 
           while((elParent.offsetWidth<el.getBoundingClientRect().width || 
           el.getBoundingClientRect().height > elParent.offsetHeight) && 
@@ -64,6 +66,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           {
             el.style.fontSize = (parseFloat(el.style.fontSize.split('px')[0])-1).toString()+'px';
           }
+          elParent.classList.add('trans-height');
           elParent.style.height = el.getBoundingClientRect().height.toString() + 'px';
           el.style.visibility = 'visible';
           el.style.opacity = 1;
@@ -72,6 +75,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   var updateFontRandomly = function() {
     var randomIndex = Math.floor(Math.random()*fonts.length);
     font = fonts[randomIndex];
+
     ASCII.updateFont(font, function() {
         ASCII.updateDisplay();
         zoomFit('zoomFit');
