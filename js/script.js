@@ -84,11 +84,15 @@ function jumbleAnimation(elClass,intervalTime,reInit){
     });
   };
   
+  function setColors(){
+    var randomColours = ['pink','thistle','orange','yellow','lightblue','lightgreen','mediumaquamarine','tomato','hotpink'];
+    var randomColour = randomColours[Math.floor(randomColours.length*Math.random())];
+    document.querySelectorAll('footer')[0].style.borderColor = randomColour;
+    document.getElementById('logo').style.textShadow = '1px 1px '+ randomColour;
+  }
+
   function init(){
-  var randomColours = ['pink','thistle','orange','yellow','lightblue','lightgreen','mediumaquamarine','tomato','hotpink'];
-  var randomColour = randomColours[Math.floor(randomColours.length*Math.random())];
-  document.querySelectorAll('footer')[0].style.borderColor = randomColour;
-  document.getElementById('logo').style.textShadow = '1px 1px '+ randomColour;
+  setColors();
   document.getElementById('regenerate-site').onclick = function(){
   document.body.style.backgroundColor = null;
   jumbleAnimation('.container',40,true);
@@ -101,7 +105,10 @@ function jumbleAnimation(elClass,intervalTime,reInit){
 
 updateFontRandomly();
 
-document.getElementById('logo').ondblclick = updateFontRandomly;
+document.getElementById('logo').ondblclick = function(){
+  setColors();
+  updateFontRandomly;
+}
 
 setInterval(function(){
   document.getElementById('logo').style.opacity = 0;
