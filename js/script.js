@@ -107,7 +107,7 @@ updateFontRandomly();
 
 document.getElementById('logo').ondblclick = function(){
   setColors();
-  updateFontRandomly;
+  updateFontRandomly();
 }
 
 setInterval(function(){
