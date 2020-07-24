@@ -59,7 +59,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           var minFontPix = 5;
           el.style.fontSize = '60px';
 
-          while((window.innerWidth<el.getBoundingClientRect().width || 
+          while((elParent.offsetWidth<el.getBoundingClientRect().width || 
           el.getBoundingClientRect().height > elParent.offsetHeight) && 
           parseFloat(el.style.fontSize.split('px')[0])>minFontPix)
           {
@@ -81,7 +81,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   };
   
   function init(){
-  var randomColours = ['pink','thistle','orange','yellow','lightblue','lightgreen','mediumaquamarine','tomato'];
+  var randomColours = ['pink','thistle','orange','yellow','lightblue','lightgreen','mediumaquamarine','tomato','hotpink'];
   var randomColour = randomColours[Math.floor(randomColours.length*Math.random())];
   document.querySelectorAll('footer')[0].style.borderColor = randomColour;
   document.getElementById('logo').style.textShadow = '1px 1px '+ randomColour;
