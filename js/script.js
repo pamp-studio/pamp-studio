@@ -55,11 +55,10 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           var el = document.getElementsByClassName(elClass)[0];
           var elParents = [].slice.call(document.getElementsByClassName('logo-container'));
           var elParent =  elParents[0];
-        
           var minFontPix = 5;
           el.style.fontSize = '60px';
 
-          while((elParent.offsetWidth<el.getBoundingClientRect().width || 
+          while((elParent.offset<el.getBoundingClientRect().width || 
           el.getBoundingClientRect().height > elParent.offsetHeight) && 
           parseFloat(el.style.fontSize.split('px')[0])>minFontPix)
           {
