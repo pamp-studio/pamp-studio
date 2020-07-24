@@ -58,7 +58,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           var minFontPix = 5;
           el.style.fontSize = '60px';
 
-          while((elParent.offset<el.getBoundingClientRect().width || 
+          while((elParent.offsetWidth<el.getBoundingClientRect().width || 
           el.getBoundingClientRect().height > elParent.offsetHeight) && 
           parseFloat(el.style.fontSize.split('px')[0])>minFontPix)
           {
