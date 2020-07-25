@@ -59,7 +59,8 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           el.style.fontSize = '60px';
           elParent.classList.remove('trans-height');
           elParent.style.height = '500px';
-
+          el.classList.remove('trans-opacity');
+          el.style.opacity = 0;
           while((elParent.offsetWidth<el.getBoundingClientRect().width || 
           el.getBoundingClientRect().height > elParent.offsetHeight) && 
           parseFloat(el.style.fontSize.split('px')[0])>minFontPix)
@@ -69,6 +70,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           elParent.classList.add('trans-height');
           elParent.style.height = el.getBoundingClientRect().height.toString() + 'px';
           el.style.visibility = 'visible';
+          el.classList.add('trans-opacity');
           el.style.opacity = 1;
   }
 
@@ -89,6 +91,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
     var randomColour = randomColours[Math.floor(randomColours.length*Math.random())];
     document.querySelectorAll('footer')[0].style.borderColor = randomColour;
     document.getElementById('logo').style.textShadow = '1px 1px '+ randomColour;
+    document.getElementById('title').style.textShadow = '1px 1px '+ randomColour;
   }
 
   function init(){
@@ -114,9 +117,12 @@ document.getElementById('logo').ondblclick = function(){
 }
 
 var logoChangeInterval = setInterval(function(){
-  document.getElementById('logo').style.opacity = 0;
   updateFontRandomly()
 },120000);
+
+window.onresize = function(){
+  updateFontRandomly()
+}
 
 window.onblur = function(){
 //  document.title = "Ԁɐɯd"; //dɯɐԀ
