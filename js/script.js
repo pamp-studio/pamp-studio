@@ -95,7 +95,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   setColors();
   document.getElementById('regenerate-site').onclick = function(){
   document.body.style.backgroundColor = null;
-  jumbleAnimation('.container',40,true);
+  jumbleAnimation('.container',20,true);
   }
 
 // for autoplay to work in ios?
@@ -108,12 +108,29 @@ updateFontRandomly();
 document.getElementById('logo').ondblclick = function(){
   setColors();
   updateFontRandomly();
+  if(logoChangeInterval){
+    clearInterval(logoChangeInterval)
+  }
 }
 
-setInterval(function(){
+var logoChangeInterval = setInterval(function(){
   document.getElementById('logo').style.opacity = 0;
   updateFontRandomly()
-},60000);
+},120000);
+
+window.onblur = function(){
+//  document.title = "Ԁɐɯd"; //dɯɐԀ
+  [].slice.call(document.getElementsByClassName('favicon')).forEach(function(x){
+      x.href = x.href.replace('earth','air');
+  })
+  window.onfocus = function(){
+ //     document.title = "Pamp";
+      [].slice.call(document.getElementsByClassName('favicon')).forEach(function(x){
+        x.href = x.href.replace('air','earth');
+    })
+      }
+  }
+
 }
 
 init();
