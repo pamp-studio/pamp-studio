@@ -120,9 +120,12 @@ var logoChangeInterval = setInterval(function(){
   updateFontRandomly()
 },120000);
 
-window.onresize = function(){
-  updateFontRandomly()
-}
+// // wouldbe good but a bit mad on safari ios cos the windowheight 
+// // changes everytime you scroll down from the top when the addressbar 
+// // disappears
+// window.onresize = function(){
+//   updateFontRandomly()
+// }
 
 window.onblur = function(){
 //  document.title = "Ԁɐɯd"; //dɯɐԀ
