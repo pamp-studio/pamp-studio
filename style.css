@@ -13,11 +13,13 @@ body{
     max-width:100%;
     overflow: hidden;
     overflow-y: auto;
+    background-image:url('media/backgrounds/finediagonal.gif')
     }
 
     main.container{
     margin: auto;
     max-width: 650px;
+    background-color:white;
     }
 
 header{ 
@@ -37,7 +39,6 @@ header nav {
 }
 
 header h1 {
-
 color:black;
 width:100%;
 margin:0px;
@@ -92,6 +93,7 @@ section.services ul li{
     opacity:0;
     visibility: hidden;
     cursor:crosshair;
+    /* background-image:url('media/backgrounds/stripe-animation.gif') */
 }
 
 small{
@@ -127,38 +129,34 @@ button#regenerate-site a{
     font-size:0.1px;
 }
 
+
+
 .gethot span{
     padding:3px;
 }
 
 @keyframes gethotbg {
-    25%  {background-color:pink;}
-    35%  {background-color:orange;}
-    45%  {background-color: hotpink;}
-    60% {background-color: tomato;}
-    100% {background-color: red;}
+    25%  {background-color:pink;   }
+    35%  {background-color:orange;  }
+    45%  {background-color: hotpink; }
+    60%  {background-color: tomato;  }
+    100% {background-color: red;      }
   }
   
-  .gethot:hover span{
+  .gethot:hover {
     color: black;
+    cursor: pointer;
     background-color:inherit;
     animation-name: gethotbg;
     animation-duration: 5s;
     animation-iteration-count: infinite;
+    background-image:url('media/backgrounds/stripe-animation.gif');
   }
 
   @keyframes gethotborder {
-    25%  {border-color:pink;}
-    35%  {border-color:orange;}
-    45%  {border-color: hotpink;}
-    60% {border-color: tomato;}
-    100% {border-color: red;}
-
-  }
-  
-  .gethot:hover{
-    cursor:pointer;
-    animation-name: gethotborder;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
+    25%  {border-color:pink;  }
+    35%  {border-color:orange;  }
+    45%  {border-color: hotpink;  }
+    60% {border-color: tomato;  }
+    100% {border-color: red;  }
   }
