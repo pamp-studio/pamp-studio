@@ -46,6 +46,16 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           else{
             threshold = 1-((1-(scrollY/((document.body.scrollHeight-window.innerHeight)/2)))*-1)
           }
+          // if(scrollY==document.body.scrollHeight-window.innerHeight){
+          //   [].slice.call(document.getElementsByClassName('bgstripe')).forEach(function(x){
+          //     x.classList.add('bgstripe-animation');
+          //   })
+          // }
+          // if(scrollY==0){
+          //   [].slice.call(document.getElementsByClassName('bgstripe')).forEach(function(x){
+          //     x.classList.remove('bgstripe-animation');
+          //   })
+          // }
           // console.log(threshold,scrollY,document.body.scrollHeight,window.innerHeight)
           jumble(el,charray,threshold);
         }
@@ -90,9 +100,10 @@ function jumbleAnimation(elClass,intervalTime,reInit){
     var randomColours = ['pink','thistle','orange','yellow','lightblue','lightgreen','mediumaquamarine','tomato','hotpink'];
     var randomColour = randomColours[Math.floor(randomColours.length*Math.random())];
     document.querySelectorAll('footer')[0].style.borderColor = randomColour;
+    document.querySelectorAll('div.bgstripe')[0].style.backgroundColor = randomColour;
     document.getElementById('logo').style.textShadow = '1px 1px '+ randomColour;
  //   document.getElementById('logo').style.backgroundColor = randomColour;
-  //  document.body.style.backgroundColor = randomColour;
+ //   document.body.style.backgroundColor = randomColour;
     document.getElementById('title').style.textShadow = '1px 1px '+ randomColour;
   }
 

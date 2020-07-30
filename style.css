@@ -4,6 +4,9 @@
 .trans-bgcolor{
     transition: background-color 1s;
 }
+.trans-bgcolor--long{
+    transition: background-color 180s;
+}
 .trans-opacity{
     transition: opacity 0.5s;
 }
@@ -20,6 +23,7 @@ body{
     margin: auto;
     max-width: 650px;
     background-color:white;
+    opacity:0.9;
     }
 
 header{ 
@@ -52,7 +56,7 @@ header p {
 
 footer {
     border: 0px;
-    border-top:5px;
+    border-top:0px;
     border-color:black;
     border-style:solid;
     text-align: center;
@@ -96,7 +100,20 @@ section.services ul li{
     /* background-image:url('media/backgrounds/stripe-animation.gif') */
 }
 
-small{
+div.bgstripe {
+    background-color:inherit;
+    height:5px;
+    width:100%;
+    padding:0px;
+    margin:0px;
+    background-image:url('media/backgrounds/finediagonal.gif')
+}
+
+div.bgstripe.bgstripe-animation {
+        background-image:url('media/backgrounds/stripe-animation.gif')
+}
+
+small {
     font-size:50%;
 }
 
@@ -129,18 +146,15 @@ button#regenerate-site a{
     font-size:0.1px;
 }
 
-
-
 .gethot span{
     padding:3px;
 }
 
 @keyframes gethotbg {
-    25%  {background-color:pink;   }
-    35%  {background-color:orange;  }
-    45%  {background-color: hotpink; }
-    60%  {background-color: tomato;  }
-    100% {background-color: red;      }
+    0%  {background-color:white;}
+    10%  {background-color:tomato;}
+    100% {background-color: hotpink;         
+    }
   }
   
   .gethot:hover {
@@ -148,15 +162,7 @@ button#regenerate-site a{
     cursor: pointer;
     background-color:inherit;
     animation-name: gethotbg;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    background-image:url('media/backgrounds/stripe-animation.gif');
-  }
-
-  @keyframes gethotborder {
-    25%  {border-color:pink;  }
-    35%  {border-color:orange;  }
-    45%  {border-color: hotpink;  }
-    60% {border-color: tomato;  }
-    100% {border-color: red;  }
+    animation-duration: 15s;
+    animation-iteration-count: 1;
+    background-image:none; 
   }
