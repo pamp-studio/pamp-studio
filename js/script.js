@@ -106,7 +106,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
     //document.querySelectorAll('div.bgstripe')[0].style.backgroundColor = randomColour;
     document.getElementById('logo').style.textShadow = '1px 1px '+ randomColour;
  //   document.getElementById('logo').style.backgroundColor = randomColour;
- //   document.body.style.backgroundColor = randomColour;
+    document.body.style.backgroundColor = randomColour;
     document.getElementById('title').style.textShadow = '1px 1px '+ randomColour;
   }
 

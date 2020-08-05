@@ -6,6 +6,7 @@ canvas.style.position = 'fixed';
 canvas.style.top = 0;
 canvas.style.left = 0;
 canvas.style.zIndex = -10;
+canvas.style.backgroundColor = 'transparent';
 
 var ctx = canvas.getContext('2d');
 ctx.strokeStyle = globalRandomColor;
@@ -118,7 +119,7 @@ draw();
 var moireResizeTimeout = null;
 window.onresize = function(e){
     if (moireResizeTimeout!=null){
-        clearTimeout(moireResizeTimeout);
+      //  clearTimeout(moireResizeTimeout);
     }
     moireResizeTimeout = setTimeout(function(){
         draw();

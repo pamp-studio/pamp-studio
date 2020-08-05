@@ -16,8 +16,8 @@ body{
     max-width:100%;
     overflow: hidden;
     overflow-y: auto;
+    background-color: #555555;
     background-image:url('media/backgrounds/finediagonal.gif');
-    cursor: crosshair;
 }
 
 .container{
@@ -98,6 +98,7 @@ section.services ul li{
     width: fit-content;
     opacity:0;
     visibility: hidden;
+    cursor: pointer;    
     /* cursor:crosshair; */
     /* background-image:url('media/backgrounds/stripe-animation.gif') */
 }
@@ -167,4 +168,8 @@ button#regenerate-site a{
     animation-duration: 15s;
     animation-iteration-count: 1;
     background-image:none; 
+  }
+
+  canvas{
+      background-color: transparent;
   }
