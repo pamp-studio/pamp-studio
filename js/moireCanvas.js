@@ -27,12 +27,18 @@ canvas.onmousedown = function(e) {
  draw(e);
 }
 
-canvas.onclick = draw;
+canvas.onclick = function(e){
+    moving(e);
+    draw;
+}
 
 var mousemoves = 0;
 window.onmousemove = function(e) {
-    moving(e);
-    draw(e);
+    setTimeout(function(){
+        moving(e);
+        draw(e);
+    },15)
+    
 }
 
 canvas.ontouchmove = function(e) {
@@ -58,7 +64,7 @@ function draw(e){
     startY = e.clientY;
     }
     else{
-        startX = window.innerWidth/3;
+        startX = window.innerWidth/2;
         startY = window.innerHeight/2;
     }
 
