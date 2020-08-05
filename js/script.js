@@ -1,3 +1,5 @@
+var globalRandomColor = 'black';
+
 function difference(a, b) {
   return Math.abs(a - b);
 }
@@ -99,8 +101,9 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   function setColors(){
     var randomColours = ['pink','thistle','orange','yellow','lightblue','lightgreen','mediumaquamarine','tomato','hotpink'];
     var randomColour = randomColours[Math.floor(randomColours.length*Math.random())];
+    globalRandomColor = randomColour;
     document.querySelectorAll('footer')[0].style.borderColor = randomColour;
-    document.querySelectorAll('div.bgstripe')[0].style.backgroundColor = randomColour;
+    //document.querySelectorAll('div.bgstripe')[0].style.backgroundColor = randomColour;
     document.getElementById('logo').style.textShadow = '1px 1px '+ randomColour;
  //   document.getElementById('logo').style.backgroundColor = randomColour;
  //   document.body.style.backgroundColor = randomColour;
@@ -109,6 +112,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
 
   function init(){
   setColors();
+  updateFontRandomly();
   document.getElementById('regenerate-site').onclick = function(){
   document.body.style.backgroundColor = null;
   jumbleAnimation('.container',20,true);
@@ -119,9 +123,8 @@ function jumbleAnimation(elClass,intervalTime,reInit){
 //minisVideo.muted = true;
 //minisVideo.play();
 
-updateFontRandomly();
 
-document.getElementById('logo').ondblclick = function(){
+document.getElementById('logo').onclick = function(){
   setColors();
   updateFontRandomly();
   if(logoChangeInterval){

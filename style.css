@@ -16,15 +16,16 @@ body{
     max-width:100%;
     overflow: hidden;
     overflow-y: auto;
-    background-image:url('media/backgrounds/finediagonal.gif')
-    }
+    background-image:url('media/backgrounds/finediagonal.gif');
+    cursor: crosshair;
+}
 
-    main.container{
+.container{
     margin: auto;
     max-width: 650px;
     background-color:white;
     opacity:0.9;
-    }
+}
 
 header{ 
     padding: 10px; 
@@ -62,8 +63,9 @@ footer {
     text-align: center;
     bottom:0;
     left:0;
-    padding:10px;
     margin-top:10px;
+    padding: 10px 0 10px 0;
+    background-color:white;
 }
 
 section.logo-container{
@@ -96,17 +98,17 @@ section.services ul li{
     width: fit-content;
     opacity:0;
     visibility: hidden;
-    cursor:crosshair;
+    /* cursor:crosshair; */
     /* background-image:url('media/backgrounds/stripe-animation.gif') */
 }
 
 div.bgstripe {
-    background-color:inherit;
-    height:5px;
+    height:10vh;
+    background-color:none;
     width:100%;
     padding:0px;
     margin:0px;
-    background-image:url('media/backgrounds/finediagonal.gif')
+    z-index:-20;
 }
 
 div.bgstripe.bgstripe-animation {
