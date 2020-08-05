@@ -101,13 +101,15 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   function setColors(){
     var randomColours = ['pink','thistle','orange','yellow','lightblue','lightgreen','mediumaquamarine','tomato','hotpink'];
     var randomColour = randomColours[Math.floor(randomColours.length*Math.random())];
+    var randomColour2 = randomColours[Math.floor(randomColours.length*Math.random())];
+
     globalRandomColor = randomColour;
     document.querySelectorAll('footer')[0].style.borderColor = randomColour;
     //document.querySelectorAll('div.bgstripe')[0].style.backgroundColor = randomColour;
     document.getElementById('logo').style.textShadow = '1px 1px '+ randomColour;
  //   document.getElementById('logo').style.backgroundColor = randomColour;
-    document.body.style.backgroundColor = randomColour;
-    document.getElementById('title').style.textShadow = '1px 1px '+ randomColour;
+    document.body.style.backgroundColor = randomColour2;
+    document.getElementById('title').style.textShadow = '1px 1px '+ randomColour2;
   }
 
   function init(){
