@@ -1,20 +1,3 @@
-.trans-height{
-    transition: height 0.5s;
-}
-.trans-bgcolor{
-    transition: background-color 3s;
-}
-.trans-bgcolor--long{
-    transition: background-color 180s;
-}
-.trans-opacity{
-    transition: opacity 0.5s;
-}
-
-.trans-opacity--long{
-    transition: opacity 1s;
-}
-
 body{
     font-family:monospace,sans-serif;
     max-width:100%;
@@ -97,10 +80,9 @@ section.logo-container{
     height:500px;
 }
 
-
-
 section.services ul {
     padding:20px;
+    margin:10px;
 }
 
 section.services ul li{
@@ -187,3 +169,20 @@ button#regenerate-site a{
   canvas{
       background-color: transparent;
   }
+
+  .trans-height{
+    transition: height 0.5s;
+}
+.trans-bgcolor{
+    transition: background-color 3s;
+}
+.trans-bgcolor--long{
+    transition: background-color 180s;
+}
+.trans-opacity{
+    transition: opacity 0.5s;
+}
+
+.trans-opacity--long{
+    transition: opacity 1s;
+}
