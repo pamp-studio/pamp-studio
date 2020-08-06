@@ -30,21 +30,21 @@ main{
 
 .container{
     background-color:rgba(255, 255, 255,0.9);
-    animation:fadeout 0.7s forwards;
+    animation:fadeout 0.8s forwards;
 }
 
 .container:hover{
-animation: fadein 0.7s forwards;
+animation: fadein 0.8s forwards;
 }
 
 @keyframes fadein {
-    from {background-color:rgba(255, 255, 255,0.9);}
+    from {background-color:rgba(255, 255, 255,0.7);}
     to {background-color:rgba(255, 255, 255, 1);}
 }
 
 @keyframes fadeout {
     from {background-color:rgba(255, 255, 255,1);}
-    to {background-color:rgba(255, 255, 255, 0.9);}
+    to {background-color:rgba(255, 255, 255, 0.7);}
 }
 
 header{ 
