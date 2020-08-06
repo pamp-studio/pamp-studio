@@ -20,28 +20,32 @@ body{
     max-width:100%;
     overflow: hidden;
     overflow-y: auto;
-    background-color: white;
     background-image:url('media/backgrounds/finediagonal.gif');
 }
 
 .container{
     margin: auto;
     max-width: 650px;
-    background-color:white;
+    background-color:rgba(255, 255, 255,0.8);
+    animation:fadeout 0.7s forwards;
 }
 
-@media screen and (min-width: 650px) {
-    .container {
-        opacity:0.5;
-    }
-    .container:hover{
-        opacity:1;
-    }
+.container:hover{
+animation: fadein 0.7s forwards;
+}
+
+@keyframes fadein {
+    from {background-color:rgba(255, 255, 255,0.8);}
+    to {background-color:rgba(255, 255, 255, 1);}
+}
+
+@keyframes fadeout {
+    from {background-color:rgba(255, 255, 255,1);}
+    to {background-color:rgba(255, 255, 255, 0.8);}
 }
 
 header{ 
     padding: 10px; 
-    background:white;
 }
 
 .hover-opacity-one:hover{
@@ -77,13 +81,13 @@ footer {
     left:0;
     margin-top:10px;
     padding: 10px 0 10px 0;
-    background-color:white;
 }
 
 section.logo-container{
     color:black;
     text-shadow:2px 2px white;
-    width:100%;
+    max-width: 650px;
+    margin:auto;
     font-weight: 900;
     display: flex;
     justify-content: center;
@@ -92,8 +96,6 @@ section.logo-container{
 }
 
 section.services{
-    opacity:0.99;
-    background:white;
 }
 
 section.services ul {
