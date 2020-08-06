@@ -99,7 +99,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   };
   
   function setColors(){
-    var randomColours = ['pink','thistle','orange','yellow','lightblue','lightgreen','mediumaquamarine','tomato','hotpink'];
+    var randomColours = ['#6B5B95','#C3447A','#E15D44','#D65076','#EFC050','#5B5EA6','#92A8D1','#88B04B','#FF6F61','orchid','turquoise','#009B77','pink','thistle','orange','yellow','lightblue','lightgreen','mediumaquamarine','tomato','hotpink'];
     var randomColour = randomColours[Math.floor(randomColours.length*Math.random())];
     var randomColour2 = randomColours[Math.floor(randomColours.length*Math.random())];
 
