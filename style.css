@@ -8,7 +8,7 @@
     transition: background-color 180s;
 }
 .trans-opacity{
-    transition: opacity 0.5s;
+    transition: opacity 2s;
 }
 
 body{
@@ -24,8 +24,18 @@ body{
     margin: auto;
     max-width: 650px;
     background-color:white;
-    opacity:0.9;
 }
+
+@media screen and (min-width: 650px) {
+    .container {
+        opacity:0.9;
+    }
+    .container:hover{
+        opacity:1;
+    }
+}
+
+
 
 header{ 
     padding: 10px; 
