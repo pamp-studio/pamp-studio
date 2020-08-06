@@ -117,7 +117,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   updateFontRandomly();
   document.getElementById('regenerate-site').onclick = function(){
   document.body.style.backgroundColor = null;
-  jumbleAnimation('.container',20,true);
+  jumbleAnimation('.regen-effect',20,true);
   }
 
 // for autoplay to work in ios?

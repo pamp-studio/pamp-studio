@@ -23,9 +23,12 @@ body{
     background-image:url('media/backgrounds/finediagonal.gif');
 }
 
-.container{
-    margin: auto;
+main{
     max-width: 650px;
+    margin:0px auto;
+}
+
+.container{
     background-color:rgba(255, 255, 255,0.9);
     animation:fadeout 0.7s forwards;
 }
@@ -86,8 +89,6 @@ footer {
 section.logo-container{
     color:black;
     text-shadow:2px 2px white;
-    max-width: 650px;
-    margin:auto;
     font-weight: 900;
     display: flex;
     justify-content: center;
@@ -95,8 +96,7 @@ section.logo-container{
     height:500px;
 }
 
-section.services{
-}
+
 
 section.services ul {
     padding:20px;
@@ -117,7 +117,7 @@ section.services ul li{
 }
 
 div.bgstripe {
-    height:10vh;
+    height:7vh;
     background-color:none;
     width:100%;
     padding:0px;
