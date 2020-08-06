@@ -12,7 +12,7 @@
 }
 
 body{
-    font-family:sans-serif;
+    font-family:monospace,sans-serif;
     max-width:100%;
     overflow: hidden;
     overflow-y: auto;
@@ -80,7 +80,6 @@ section.logo-container{
 }
 
 section.services{
-    padding: 10px;
     opacity:0.99;
     background:white;
 }
