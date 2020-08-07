@@ -140,6 +140,12 @@ button#regenerate-site{
     padding:5px;
 }
 
+div.regenerate-container{
+    width:100%;
+    text-align:center;
+    padding:10px;
+}
+
 button#regenerate-site a{
     text-decoration:none;
     font-size:0.1px;

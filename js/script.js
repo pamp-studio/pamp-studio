@@ -94,7 +94,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
 
     globalRandomColor = randomColour;
     document.querySelectorAll('footer')[0].style.borderColor = randomColour;
-//    document.getElementById('logo').style.textShadow = '1px 1px '+ randomColour;
+    document.getElementById('themeColor').content = randomColour;
     document.body.style.backgroundColor = randomColour2;
     document.getElementById('title').style.textShadow = '1px 1px '+ randomColour2;
   }
