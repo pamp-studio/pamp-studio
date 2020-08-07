@@ -1,5 +1,35 @@
 var globalRandomColor = 'black';
 
+function tabs(){
+var container = document.getElementById('tabs');
+if(container==null){return}
+var tabs = [].slice.call(container.querySelectorAll('nav ul li'));
+var pages = [].slice.call(container.querySelectorAll('div'));
+//tabs[0].style.classList.add('active');
+
+function hideAllPages(){
+  pages.forEach(function(x,i){
+    x.style.display = 'none';
+    tabs[i].className = '';
+  })
+}
+
+tabs.forEach(function(x,i){
+  x.style.borderColor = globalRandomColor;
+  x.onclick = function(){
+    hideAllPages();
+    pages[i].style.display = 'block';
+    x.className = 'active';
+  }
+})
+
+hideAllPages();
+pages[0].style.display = 'block';
+tabs[0].className = 'active';
+}
+
+
+
 function difference(a, b) {
   return Math.abs(a - b);
 }
@@ -97,10 +127,14 @@ function jumbleAnimation(elClass,intervalTime,reInit){
     document.getElementById('themeColor').content = randomColour;
     document.body.style.backgroundColor = randomColour2;
     document.getElementById('title').style.textShadow = '1px 1px '+ randomColour2;
+    [].slice.call(document.getElementById('tabs').querySelectorAll('nav ul li')).forEach(function(x,i){
+      x.style.borderColor = globalRandomColor;
+    })
   }
 
   function init(){
   setColors();
+  tabs();
   updateFontRandomly();
   document.getElementById('regenerate-site').onclick = function(){
   document.body.style.backgroundColor = null;
