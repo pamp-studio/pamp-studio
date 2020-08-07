@@ -15,7 +15,7 @@ var lines = [];
 
 document.body.append(canvas);
 
-var increment = 5;
+var increment = 19;
 
 var started = false;
 canvas.onmousedown = function(e) {
@@ -28,7 +28,7 @@ canvas.onmousedown = function(e) {
 }
 
 canvas.onclick = function(e){
-    moving(e);
+    moving(e);  
     draw;
 }
 

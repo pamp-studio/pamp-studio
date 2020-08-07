@@ -72,7 +72,7 @@ footer {
 
 section.logo-container{
     color:black;
-    text-shadow:2px 2px white;
+    text-shadow:2px 2px rgba(255,255,255,0.7);
     font-weight: 900;
     display: flex;
     justify-content: center;
