@@ -207,4 +207,13 @@ button#regenerate-site a{
    border-width: 2px;
 }
 
+#tabs nav ul li span {
+    display: inline-block; 
+    transition: transform .8s ease-in-out;  
+}
+
+#tabs nav ul li.active span{
+    transform:rotate(15deg);
+ }
+
 #tabs div{padding: 0px 20px 20px 20px;}

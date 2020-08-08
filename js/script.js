@@ -3,9 +3,8 @@ var globalRandomColor = 'black';
 function tabs(){
 var container = document.getElementById('tabs');
 if(container==null){return}
-var tabs = [].slice.call(container.querySelectorAll('nav ul li'));
-var pages = [].slice.call(container.querySelectorAll('div'));
-//tabs[0].style.classList.add('active');
+var tabs = [].slice.call(container.querySelectorAll('li[data-tabctrl]'));
+var pages = [].slice.call(container.querySelectorAll('div[data-tab]'));
 
 function hideAllPages(){
   pages.forEach(function(x,i){
@@ -127,7 +126,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
     document.getElementById('themeColor').content = randomColour;
     document.body.style.backgroundColor = randomColour2;
     document.getElementById('title').style.textShadow = '1px 1px '+ randomColour2;
-    [].slice.call(document.getElementById('tabs').querySelectorAll('nav ul li')).forEach(function(x,i){
+    [].slice.call(document.getElementById('tabs').querySelectorAll('li[data-tabctrl]')).forEach(function(x,i){
       x.style.borderColor = globalRandomColor;
     })
   }
