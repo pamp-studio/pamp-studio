@@ -13,7 +13,7 @@ main{
 }
 
 .container{
-    background-color:rgba(255, 255, 255,0.9);
+    background: repeating-radial-gradient(transparent, transparent 1px, white 1px, white 2px);
     animation:fadeout 0.8s forwards;
     border-radius:1px;
 }
@@ -205,6 +205,7 @@ button#regenerate-site a{
 #tabs nav ul li.active{
    border-style:dotted;
    border-width: 2px;
+   background: radial-gradient(white, transparent);
 }
 
 #tabs nav ul li span {
