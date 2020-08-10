@@ -87,6 +87,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           var elParent =  elParents[0];
           var minFontPix = 5;
           el.style.fontSize = '60px';
+          el.style.width = 'fit-content';
           elParent.classList.remove('trans-height');
           elParent.style.height = '500px';
           el.classList.remove('trans-opacity');
@@ -99,6 +100,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           }
           elParent.classList.add('trans-height');
           elParent.style.height = el.getBoundingClientRect().height.toString() + 'px';
+         // el.style.width = '100%';
           el.style.visibility = 'visible';
           el.classList.add('trans-opacity');
           el.style.opacity = 1;
@@ -120,12 +122,18 @@ function jumbleAnimation(elClass,intervalTime,reInit){
     var randomColours = ['#6B5B95','#C3447A','#E15D44','#D65076','#EFC050','#5B5EA6','#92A8D1','#88B04B','#FF6F61','orchid','turquoise','#009B77','pink','thistle','orange','yellow','lightblue','lightgreen','mediumaquamarine','tomato','hotpink'];
     var randomColour = randomColours[Math.floor(randomColours.length*Math.random())];
     var randomColour2 = randomColours[Math.floor(randomColours.length*Math.random())];
-
+    var blackOrWhite = Math.random() <= 0.5 ? 'black' : 'white';
+    var blackOrWhiteOpposite = blackOrWhite == 'black' ? 'white' : 'black';
     globalRandomColor = randomColour;
-    document.querySelectorAll('footer')[0].style.borderColor = randomColour;
+  //  document.querySelectorAll('footer')[0].style.borderColor = randomColour;
     document.getElementById('themeColor').content = randomColour;
-    document.body.style.backgroundColor = randomColour2;
+    //document.body.style.backgroundImage = 'repeating-linear-gradient(180deg,'+randomColour2+','+randomColour2+' 1px, transparent 1px, transparent 1px)';
+    document.body.style.backgroundColor = blackOrWhiteOpposite;
+    document.getElementById('logo').style.color = blackOrWhite;
     document.getElementById('title').style.textShadow = '1px 1px '+ randomColour2;
+    document.getElementById('logo').style.textShadow = '1px 1px '+ randomColour + ',2px 2px '+blackOrWhiteOpposite+', 3px 3px '+ randomColour2;
+   // [].slice.call(document.getElementsByClassName('logo-container'))[0].style.backgroundImage = 'repeating-linear-gradient(180deg,'+'black'+','+'black'+' 1px, transparent 1px, transparent 2px)';
+
     [].slice.call(document.getElementById('tabs').querySelectorAll('li[data-tabctrl]')).forEach(function(x,i){
       x.style.borderColor = globalRandomColor;
     })

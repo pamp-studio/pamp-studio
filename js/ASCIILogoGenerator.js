@@ -1,5 +1,5 @@
 "use strict";
-var generatePhrase = "Pamp\nthe\nStudio";
+var generatePhrase = "Pamp\nStudio";
 var fonts = ["3D Diagonal.flf",
 "3D-ASCII.flf",
 "3x5.flf",

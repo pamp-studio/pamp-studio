@@ -3,8 +3,7 @@ body{
     max-width:100%;
     overflow: hidden;
     overflow-y: auto;
-    background-image:url('media/backgrounds/finediagonal.gif');
-    /* background-image:url('media/backgrounds/stripe-animation.gif') */
+    background-color:black;
 }
 
 main{
@@ -13,7 +12,6 @@ main{
 }
 
 .container{
-    background: repeating-radial-gradient(transparent, transparent 1px, white 1px, white 2px);
     animation:fadeout 0.8s forwards;
     border-radius:1px;
 }
@@ -72,13 +70,14 @@ footer {
 }
 
 section.logo-container{
-    color:black;
+    color:white;
     text-shadow:2px 2px rgba(255,255,255,0.7);
     font-weight: 900;
     display: flex;
     justify-content: center;
     align-items: center; 
     height:500px;
+    overflow:hidden;
 }
 
 section.services ul {
@@ -96,18 +95,8 @@ section.services ul li{
     opacity:0;
     visibility: hidden;
     cursor: pointer;    
-    /* cursor:crosshair; */
     /* background-image:url('media/backgrounds/stripe-animation.gif') */
 }
-
-/* div.bgstripe {
-    height:7vh;
-    background-color:none;
-    width:100%;
-    padding:0px;
-    margin:0px;
-    z-index:-20;
-} */
 
 div.bgstripe.bgstripe-animation {
         background-image:url('media/backgrounds/stripe-animation.gif')
@@ -205,7 +194,8 @@ button#regenerate-site a{
 #tabs nav ul li.active{
    border-style:dotted;
    border-width: 2px;
-   background: radial-gradient(white, transparent);
+   background:repeating-linear-gradient(45deg, #fff, #fff 1px, transparent 1px, transparent 1.5px);
+
 }
 
 #tabs nav ul li span {
@@ -218,3 +208,11 @@ button#regenerate-site a{
  }
 
 #tabs div{padding: 0px 20px 20px 20px;}
+
+.container { 
+    background: 
+    repeating-linear-gradient(90deg, #fff, #fff 1px, transparent 1px, transparent 1.5px);
+} 
+
+
+@keyframes loader { 0% { background-position: 1rem 0; } 100% { background-position: 0 0; } } 
