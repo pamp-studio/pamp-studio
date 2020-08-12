@@ -14,7 +14,7 @@ main {
 .container {
     animation: fadeout 0.8s forwards;
     border-radius: 0px 1px 1px 1px;
-    background: repeating-linear-gradient(0deg, #fff, #fff 1px, transparent 1px, transparent 2px);
+    background: repeating-linear-gradient(0deg, #fff, #fff 2px, transparent 2px, transparent 4px);
 }
 
 #tabs .container{
@@ -223,14 +223,13 @@ canvas {
 #tabs nav ul li {
     display: inline-block;
     border-color: white;
-    background-color:white;
+    /* background-color:white; */
     border-style: dotted;
     padding: 20px;
     border-radius: 3px 0px 0px 0px;
     cursor: pointer;
     border-width: 1px 1px 0px 1px;
-    background: repeating-linear-gradient(0deg, #fff, #fff 1px, transparent 1px, transparent 2px);
-    
+    background: repeating-linear-gradient(180deg, #fff, #fff 2px, transparent 2px, transparent 4px);
 }
 
 #tabs nav ul li.active {
