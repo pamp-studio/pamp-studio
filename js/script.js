@@ -127,7 +127,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   //  document.querySelectorAll('footer')[0].style.borderColor = randomColour;
     document.getElementById('themeColor').content = randomColour;
     document.body.style.backgroundImage = 'repeating-linear-gradient(90deg,'+randomColour2+','+randomColour2+' 2px, transparent 2px, transparent 4px)';
-    document.body.style.backgroundColor = blackOrWhiteOpposite;
+    document.body.style.backgroundColor = randomColour;
     document.getElementById('logo').style.color = blackOrWhite;
     document.getElementById('title').style.textShadow = '1px 1px '+ randomColour;
     document.getElementById('logo').style.textShadow = '1px 1px '+ randomColour + ',2px 2px '+blackOrWhiteOpposite+', 3px 3px '+ randomColour2;
