@@ -12,9 +12,10 @@ main {
 }
 
 .container {
-    animation: fadeout 0.8s forwards;
+    /* animation: fadeout 0.8s forwards; */
     border-radius: 0px 1px 1px 1px;
-    background: repeating-linear-gradient(0deg, #fff, #fff 2px, transparent 2px, transparent 4px);
+    background-color:white;
+    /* background: repeating-linear-gradient(0deg, #fff, #fff 2px, transparent 2px, transparent 4px); */
 }
 
 #tabs .container{
@@ -26,9 +27,9 @@ main {
     animation:none;
 }
 
-.container:hover {
+/* .container:hover {
     animation: fadein 0.8s forwards;
-}
+} */
 
 @keyframes fadein {
     from {
@@ -223,13 +224,13 @@ canvas {
 #tabs nav ul li {
     display: inline-block;
     border-color: white;
-    /* background-color:white; */
+    background-color:rgba(255, 255, 255, 0.8);
     border-style: dotted;
     padding: 20px;
     border-radius: 3px 0px 0px 0px;
     cursor: pointer;
     border-width: 1px 1px 0px 1px;
-    background: repeating-linear-gradient(180deg, #fff, #fff 2px, transparent 2px, transparent 4px);
+    /* background: repeating-linear-gradient(180deg, #fff, #fff 2px, transparent 2px, transparent 4px); */
 }
 
 #tabs nav ul li.active {
