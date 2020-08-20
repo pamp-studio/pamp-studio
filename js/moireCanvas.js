@@ -60,10 +60,10 @@ function moving(e){
 function draw(e){
 
     if(e!=undefined){
-    startX = e.clientX;
-    startY = e.clientY;
+        startX = e.clientX;
+        startY = e.clientY;
     }
-    else{
+    else {
         startX = window.innerWidth/2;
         startY = window.innerHeight/2;
     }

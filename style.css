@@ -53,6 +53,7 @@ main {
 
 header {
     padding: 10px;
+    display:none;
 }
 
 .hover-opacity-one:hover {
@@ -237,6 +238,7 @@ canvas {
     border-style: solid;
     border-color: white;
     background: white;
+    font-weight:bold;
 }
 
 #tabs nav ul li span {
