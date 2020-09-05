@@ -16,6 +16,8 @@ main {
     border-radius: 0px 1px 1px 1px;
     background-color:white;
     /* background: repeating-linear-gradient(0deg, #fff, #fff 2px, transparent 2px, transparent 4px); */
+    border: 1px solid black;
+    border-width: 1px 1px 1px 1px;
 }
 
 #tabs .container{
@@ -26,10 +28,6 @@ main {
 #tabs .container:hover{
     animation:none;
 }
-
-/* .container:hover {
-    animation: fadein 0.8s forwards;
-} */
 
 @keyframes fadein {
     from {
@@ -239,6 +237,9 @@ canvas {
     border-color: white;
     background: white;
     font-weight:bold;
+    border-style: solid;
+    border-width: 1px 1px 0px 1px;
+    border-color: black;
 }
 
 #tabs nav ul li span {
