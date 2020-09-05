@@ -240,9 +240,6 @@ canvas {
     border-color: white;
     background: white;
     font-weight:bold;
-    border-style: solid;
-    border-width: 1px 1px 0px 1px;
-    border-color: black;
 }
 
 #tabs nav ul li span {
