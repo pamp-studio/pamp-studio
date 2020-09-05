@@ -4,6 +4,7 @@ body {
     overflow: hidden;
     overflow-y: auto;
     background-color: black;
+    cursor: none;
 }
 
 main {
@@ -18,6 +19,7 @@ main {
     /* background: repeating-linear-gradient(0deg, #fff, #fff 2px, transparent 2px, transparent 4px); */
     border: 1px solid black;
     border-width: 1px 1px 1px 1px;
+    cursor: default;
 }
 
 #tabs .container{
@@ -28,6 +30,10 @@ main {
 #tabs .container:hover{
     animation:none;
 }
+
+/* .container:hover {
+    animation: fadein 0.8s forwards;
+} */
 
 @keyframes fadein {
     from {
@@ -113,7 +119,6 @@ section.services ul li {
     width: fit-content;
     opacity: 0;
     visibility: hidden;
-    cursor: pointer;
     /* background-image:url('media/backgrounds/stripe-animation.gif') */
 }
 
