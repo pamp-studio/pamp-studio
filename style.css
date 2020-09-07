@@ -29,9 +29,19 @@ main {
     animation:none;
 }
 
-/* .container:hover {
-    animation: fadein 0.8s forwards;
-} */
+
+div.mc-field-group > *:first-child {
+   width:200px;
+}
+
+div.mc-field-group {
+     display:flex;
+  flex-flow:row;
+}
+
+input#mc-embedded-subscribe {
+    margin-top:10px;
+}
 
 @keyframes fadein {
     from {
@@ -219,7 +229,7 @@ canvas {
     transition: opacity 1s;
 }
 
-#tabs div {
+#tabs div[data-tab] {
     margin: 0px;
 }
 
@@ -251,7 +261,7 @@ canvas {
     transform: rotate(15deg);
 }
 
-#tabs div {
+#tabs div[data-tab] {
     padding: 40px;
 }
 
