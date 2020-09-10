@@ -1,7 +1,6 @@
 body {
     font-family: monospace,sans-serif;
     max-width: 100%;
-    overflow: hidden;
     overflow-x: hidden;
     background-color: black;
     cursor: none;
@@ -21,6 +20,10 @@ main {
     cursor: default;
 }
 
+span.asterisk{
+    color: red;
+}
+
 #tabs .container{
     animation: none;
     background:white;
@@ -38,6 +41,12 @@ div.mc-field-group > *:first-child {
 div.mc-field-group {
      display:flex;
   flex-flow:row;
+}
+
+div.mc-field-group input, 
+div.mc-field-group textarea {
+    width:100%;
+    font-size:16px;
 }
 
 input#mc-embedded-subscribe {
