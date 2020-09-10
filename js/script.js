@@ -87,6 +87,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           var minFontPix = 5;
           el.style.fontSize = '60px';
           el.style.width = 'fit-content';
+          el.style.height = 'fit-content';
           elParent.classList.remove('trans-height');
           elParent.style.height = '500px';
           el.classList.remove('trans-opacity-color');
