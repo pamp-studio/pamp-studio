@@ -4,6 +4,7 @@ body {
     overflow-x: hidden;
     background-color: black;
     cursor: none;
+    font-size:14px;
 }
 
 main {
@@ -47,6 +48,10 @@ div.mc-field-group input,
 div.mc-field-group textarea {
     width:100%;
     font-size:16px;
+}
+
+div.mc-field-group textarea {
+    min-height:100px;
 }
 
 input#mc-embedded-subscribe {
