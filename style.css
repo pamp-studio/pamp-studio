@@ -2,14 +2,15 @@ body {
     font-family: monospace,sans-serif;
     max-width: 100%;
     overflow: hidden;
-    overflow-y: auto;
+    overflow-x: hidden;
     background-color: black;
     cursor: none;
 }
 
 main {
-    max-width: 650px;
+    width: 650px;
     margin: 0px auto;
+    max-width: 85vw;
 }
 
 .container {
@@ -238,7 +239,7 @@ canvas {
     border-color: white;
     background-color:rgba(255, 255, 255, 0.8);
     border-style: dotted;
-    padding: 20px;
+    padding: 15px;
     border-radius: 3px 0px 0px 0px;
     cursor: pointer;
     border-width: 1px 1px 0px 1px;
