@@ -284,3 +284,9 @@ canvas {
         background-position: 0 0;
     }
 }
+
+@media (max-width: 600px) {
+    canvas{
+        display: none !important;
+    }
+}

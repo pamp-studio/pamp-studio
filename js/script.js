@@ -88,6 +88,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           el.style.fontSize = '60px';
           el.style.width = 'fit-content';
           el.style.height = 'fit-content';
+        
           elParent.classList.remove('trans-height');
           elParent.style.height = '500px';
           el.classList.remove('trans-opacity-color');
@@ -127,7 +128,8 @@ function jumbleAnimation(elClass,intervalTime,reInit){
     globalRandomColor = randomColour;
   //  document.querySelectorAll('footer')[0].style.borderColor = randomColour;
     document.getElementById('themeColor').content = randomColour;
-    document.body.style.backgroundImage = 'repeating-linear-gradient(90deg,'+randomColour2+','+randomColour2+' 2px, transparent 2px, transparent 4px)';
+    document.body.style.backgroundImage = window.innerWidth > 600 ? 'repeating-linear-gradient(90deg,'+randomColour2+','+randomColour2+' 2px, transparent 2px, transparent 4px)' :
+    'repeating-linear-gradient(90deg,'+randomColour2+','+randomColour2+' 1px, transparent 1px, transparent 2px)';
     document.body.style.backgroundColor = randomColour;
     document.getElementById('logo').style.color = blackOrWhite;
     document.getElementById('title').style.textShadow = '1px 1px '+ randomColour;
