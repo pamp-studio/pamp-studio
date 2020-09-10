@@ -285,7 +285,7 @@ canvas {
     }
 }
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 450px) {
     canvas{
         display: none !important;
     }
