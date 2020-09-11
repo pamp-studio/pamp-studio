@@ -147,6 +147,16 @@
 <script src="js/ASCIILogoGenerator.js?0"></script>
 <script src='js/script.js?2'></script>
 <script src="js/moireCanvas.js?0"></script>
-
+<script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(err) {
+              console.log('ServiceWorker registration failed: ', err);
+            });
+          });
+        }
+        </script>
         </body>
 </html>
