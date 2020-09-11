@@ -1,6 +1,6 @@
 {
-    "name": "Pamp Studio",
-    "short_name": "Pamp",
+    "name": "Pamp Internet Studio",
+    "short_name": "Pamp Studio",
     "start_url": "index.html",
     "icons": [
         {
@@ -17,5 +17,5 @@
     "background_color": "#ffffff",
     "display": "standalone",
     "orientation": "portrait-primary"
-} 
+}
  

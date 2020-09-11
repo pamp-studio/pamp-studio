@@ -1,5 +1,5 @@
-var cacheHistory = ['v0'];
-var cacheName = 'v0'
+var cacheHistory = ['v0','v0.01'];
+var cacheName = 'v0.01'
 var urlsToCache = [
   'index.html',
   'js/figlet.js',
