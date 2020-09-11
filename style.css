@@ -228,7 +228,7 @@ canvas {
 }
 
 .trans-height {
-    transition: height 0.5s;
+    transition: height 0.25s;
 }
 
 .trans-bgcolor {

@@ -17,8 +17,15 @@ function hideAllPages(){
 
 tabs.forEach(function(x,i){
   x.onclick = function(){
+    var oldHeight = container.offsetHeight;
     hideAllPages();
     pages[i].style.display = 'block';
+    container.style.height='auto';
+    var newHeight = container.offsetHeight;
+    container.style.height=oldHeight+'px';
+    setTimeout(function(){
+      container.style.height= newHeight+'px';
+    },.1)
     x.className = 'active';
   }
 })

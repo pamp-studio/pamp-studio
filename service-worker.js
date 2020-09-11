@@ -128,7 +128,7 @@ var urlsToCache = [
   "fonts/THIS.flf",
   "fonts/Train.flf",
   "fonts/Twisted.flf"
-])
+]) 
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
