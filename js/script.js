@@ -168,7 +168,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
     el.style.color = "black";
     el.style.backgroundColor ="white"
   })
-  jumbleAnimation('.regen-effect',50,true);
+  jumbleAnimation('.regen-effect',25,true);
   }
 
 // for autoplay to work in ios?
