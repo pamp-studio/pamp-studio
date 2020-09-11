@@ -27,6 +27,7 @@ tabLinks.forEach(function(x){
   var index = parseInt(x.dataset.tabLink); 
   x.onclick = function(){
     tabs[index].click();
+    container.scrollIntoView();
   }
    })
 
