@@ -6,7 +6,9 @@ var urlsToCache = [
   'fonts/js/ASCIILogoGenerator.js',
   'fonts/js/script.js',
   'fonts/js/moireCanvas.js',
-  'fonts/media/icons/GitHub-Mark.png',
+  'fonts/media/icons/GitHub-Mark.png'
+];
+var fontsToCache = [
   "fonts/3D Diagonal.flf",
   "fonts/3D-ASCII.flf",
   "fonts/3x5.flf",
@@ -126,7 +128,8 @@ var urlsToCache = [
   "fonts/The Edge.flf",
   "fonts/THIS.flf",
   "fonts/Train.flf",
-  "fonts/Twisted.flf"];
+  "fonts/Twisted.flf"
+]
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
