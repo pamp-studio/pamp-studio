@@ -16,10 +16,8 @@ main {
 a {color:blue;}
 
 .container {
-    /* animation: fadeout 0.8s forwards; */
     border-radius: 0px 1px 1px 1px;
     background-color:white;
-    /* background: repeating-linear-gradient(0deg, #fff, #fff 2px, transparent 2px, transparent 4px); */
     cursor: default;
 }
 
@@ -264,7 +262,6 @@ canvas {
     border-radius: 3px 0px 0px 0px;
     cursor: pointer;
     border-width: 1px 1px 0px 1px;
-    /* background: repeating-linear-gradient(180deg, #fff, #fff 2px, transparent 2px, transparent 4px); */
 }
 
 #tabs nav ul li.active {

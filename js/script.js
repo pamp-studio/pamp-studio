@@ -157,7 +157,6 @@ function jumbleAnimation(elClass,intervalTime,reInit){
     var blackOrWhite = Math.random() <= 0.5 ? 'black' : 'white';
     var blackOrWhiteOpposite = blackOrWhite == 'black' ? 'white' : 'black';
     globalRandomColor = randomColour;
-  //  document.querySelectorAll('footer')[0].style.borderColor = randomColour;
     document.getElementById('themeColor').content = randomColour;
     document.body.style.backgroundImage = window.innerWidth >= 450 ? 'repeating-linear-gradient(90deg,'+randomColour2+','+randomColour2+' 2px, transparent 2px, transparent 4px)' :
     'repeating-linear-gradient(90deg,'+randomColour2+','+randomColour2+' 1px, transparent 1px, transparent 2px)';
@@ -165,7 +164,6 @@ function jumbleAnimation(elClass,intervalTime,reInit){
     document.getElementById('logo').style.color = blackOrWhite;
     document.getElementById('title').style.textShadow = '1px 1px '+ randomColour;
     document.getElementById('logo').style.textShadow = '1px 1px '+ randomColour + ',2px 2px '+blackOrWhiteOpposite+', 3px 3px '+ randomColour2;
-   // [].slice.call(document.getElementsByClassName('logo-container'))[0].style.backgroundImage = 'repeating-linear-gradient(180deg,'+'black'+','+'black'+' 1px, transparent 1px, transparent 2px)';
   }
 
   function init(){
@@ -184,12 +182,6 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   jumbleAnimation('.regen-effect',25,true);
   }
 
-// for autoplay to work in ios?
-//var minisVideo = document.getElementById("minisVideo");
-//minisVideo.muted = true;
-//minisVideo.play();
-
-
 document.getElementById('logo').onclick = function(){
   setColors();
   updateFontRandomly();
@@ -201,13 +193,6 @@ document.getElementById('logo').onclick = function(){
 var logoChangeInterval = setInterval(function(){
   updateFontRandomly()
 },120000);
-
-// // wouldbe good but a bit mad on safari ios cos the windowheight 
-// // changes everytime you scroll down from the top when the addressbar 
-// // disappears
-// window.onresize = function(){
-//   updateFontRandomly()
-// }
 
 window.onblur = function(){
 //  document.title = "Ԁɐɯd"; //dɯɐԀ
