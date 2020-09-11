@@ -46,6 +46,20 @@ elem.innerHTML =
 charrayClone.map(function(x,i){return x.char;}).join('')
 }
 
+function matrixJumble(elem,charray,threshold){
+  var random = Math.random();
+
+  var charrayClone = JSON.parse(JSON.stringify(charray)).map(function(x,i,arr){
+    random = Math.random();
+    if(random<threshold && !x.pos && !arr[Math.round((charray.length-1)*random)].pos){
+            x.char = charray[Math.round((charray.length-1)*random)].char + (random<=0.5?"0":"1");
+    }
+    return x;
+})
+elem.innerHTML = 
+charrayClone.map(function(x,i){return x.char;}).join('')
+}
+
 function jumbleAnimation(elClass,intervalTime,reInit){
   var el = document.querySelectorAll(elClass)[0];
   var charray = el.innerHTML.split('')
@@ -53,7 +67,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   var threshold = 1;
   var interval = setInterval(function(){
           threshold -= 0.01;
-          jumble(el,charray,threshold);
+          matrixJumble(el,charray,threshold);
           if(threshold<0){
             clearInterval(interval);
             if(reInit){
@@ -146,8 +160,15 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   setColors();
   tabs();
   document.getElementById('regenerate-site').onclick = function(){
-  document.body.style.backgroundColor = null;
-  jumbleAnimation('.regen-effect',20,true);
+  document.body.style.background = null;
+  document.getElementById('logo').style.visibility = 'hidden';
+  [].slice.call(document.querySelectorAll("*")).forEach(function(el){
+    el.style.width="100%";
+    el.style.maxWidth="100%";
+    el.style.color = "black";
+    el.style.backgroundColor ="white"
+  })
+  jumbleAnimation('.regen-effect',50,true);
   }
 
 // for autoplay to work in ios?
@@ -178,12 +199,12 @@ var logoChangeInterval = setInterval(function(){
 window.onblur = function(){
 //  document.title = "Ԁɐɯd"; //dɯɐԀ
   [].slice.call(document.getElementsByClassName('favicon')).forEach(function(x){
-      x.href = x.href.replace('earth','air');
+      x.href = x.href.replace('earth','earth-invert');
   })
   window.onfocus = function(){
  //     document.title = "Pamp";
       [].slice.call(document.getElementsByClassName('favicon')).forEach(function(x){
-        x.href = x.href.replace('air','earth');
+        x.href = x.href.replace('earth-invert','earth');
     })
       }
   }

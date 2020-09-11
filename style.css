@@ -4,7 +4,7 @@ body {
     overflow-x: hidden;
     background-color: black;
     cursor: none;
-    font-size:14px;
+    font-size:16px;
 }
 
 main {
@@ -45,7 +45,8 @@ div.mc-field-group {
 }
 
 div.mc-field-group input, 
-div.mc-field-group textarea {
+div.mc-field-group textarea,
+div.mc-field-group label {
     width:100%;
     font-size:16px;
 }
@@ -151,6 +152,10 @@ div.bgstripe.bgstripe-animation {
 
 small {
     font-size: 50%;
+}
+
+img.footer-icon{
+    max-height:20px;
 }
 
 .video-container {
