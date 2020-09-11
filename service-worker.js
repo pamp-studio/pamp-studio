@@ -1,14 +1,13 @@
 var cacheHistory = ['v0'];
 var cacheName = 'v0'
 var urlsToCache = [
-  'fonts/index.html',
-  'fonts/js/figlet.js',
-  'fonts/js/ASCIILogoGenerator.js',
-  'fonts/js/script.js',
-  'fonts/js/moireCanvas.js',
-  'fonts/media/icons/GitHub-Mark.png'
-];
-var fontsToCache = [
+  'index.html',
+  'js/figlet.js',
+  'js/ASCIILogoGenerator.js',
+  'js/script.js',
+  'js/moireCanvas.js',
+  'media/icons/GitHub-Mark.png'
+].concat([
   "fonts/3D Diagonal.flf",
   "fonts/3D-ASCII.flf",
   "fonts/3x5.flf",
@@ -129,7 +128,7 @@ var fontsToCache = [
   "fonts/THIS.flf",
   "fonts/Train.flf",
   "fonts/Twisted.flf"
-]
+])
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
