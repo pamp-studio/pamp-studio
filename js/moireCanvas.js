@@ -15,7 +15,7 @@ var lines = [];
 
 document.body.append(canvas);
 
-var increment = 19;
+var increment = 47;
 
 var started = false;
 canvas.onmousedown = function(e) {
