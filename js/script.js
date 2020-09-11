@@ -5,6 +5,8 @@ var container = document.getElementById('tabs');
 if(container==null){return}
 var tabs = [].slice.call(container.querySelectorAll('li[data-tabctrl]'));
 var pages = [].slice.call(container.querySelectorAll('div[data-tab]'));
+var tabLinks = [].slice.call(document.querySelectorAll('*[data-tab-link]'));
+
 
 function hideAllPages(){
   pages.forEach(function(x,i){
@@ -20,6 +22,13 @@ tabs.forEach(function(x,i){
     x.className = 'active';
   }
 })
+
+tabLinks.forEach(function(x){
+  var index = parseInt(x.dataset.tabLink); 
+  x.onclick = function(){
+    tabs[index].click();
+  }
+   })
 
 hideAllPages();
 pages[0].style.display = 'block';
@@ -149,10 +158,6 @@ function jumbleAnimation(elClass,intervalTime,reInit){
     document.getElementById('title').style.textShadow = '1px 1px '+ randomColour;
     document.getElementById('logo').style.textShadow = '1px 1px '+ randomColour + ',2px 2px '+blackOrWhiteOpposite+', 3px 3px '+ randomColour2;
    // [].slice.call(document.getElementsByClassName('logo-container'))[0].style.backgroundImage = 'repeating-linear-gradient(180deg,'+'black'+','+'black'+' 1px, transparent 1px, transparent 2px)';
-
-    [].slice.call(document.getElementById('tabs').querySelectorAll('li[data-tabctrl]')).forEach(function(x,i){
-   //   x.style.borderColor = globalRandomColor;
-    })
   }
 
   function init(){

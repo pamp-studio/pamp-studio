@@ -13,6 +13,8 @@ main {
     max-width: 85vw;
 }
 
+a {color:blue;}
+
 .container {
     /* animation: fadeout 0.8s forwards; */
     border-radius: 0px 1px 1px 1px;
