@@ -197,12 +197,12 @@ var logoChangeInterval = setInterval(function(){
 window.onblur = function(){
 //  document.title = "Ԁɐɯd"; //dɯɐԀ
   [].slice.call(document.getElementsByClassName('favicon')).forEach(function(x){
-      x.href = x.href.replace('earth','earth-invert');
+      x.href = x.href.replace('planet-pink','planet-green');
   })
   window.onfocus = function(){
  //     document.title = "Pamp";
       [].slice.call(document.getElementsByClassName('favicon')).forEach(function(x){
-        x.href = x.href.replace('earth-invert','earth');
+        x.href = x.href.replace('planet-green','planet-pink');
     })
       }
   }
