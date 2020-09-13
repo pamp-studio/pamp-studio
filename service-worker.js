@@ -1,6 +1,7 @@
-var cacheHistory = ['v0','v0.01','v0.02','v0.03'];
-var cacheName = 'v0.04';
+var cacheHistory = ['v0','v0.01','v0.02','v0.03','v0.04'];
+var cacheName = 'v0.05';
 var urlsToCache = [
+  'style.css',
   'js/figlet.js',
   'js/ASCIILogoGenerator.js',
   'js/script.js',

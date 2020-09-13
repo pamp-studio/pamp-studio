@@ -34,6 +34,17 @@ span.asterisk{
     animation:none;
 }
 
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center .button {
+    min-width:50%;
+}
 
 div.mc-field-group > *:first-child {
    width:200px;
@@ -42,6 +53,7 @@ div.mc-field-group > *:first-child {
 div.mc-field-group {
      display:flex;
   flex-flow:row;
+  margin-bottom: 5px;
 }
 
 div.mc-field-group input, 
@@ -151,7 +163,8 @@ div.bgstripe.bgstripe-animation {
 }
 
 small {
-    font-size: 50%;
+    display:block;
+    font-size: 12px;
 }
 
 img.footer-icon{
