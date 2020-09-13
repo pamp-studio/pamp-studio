@@ -13,7 +13,9 @@ main {
     max-width: 85vw;
 }
 
-a {color:blue;}
+a {
+    color:blue;
+}
 
 .container {
     border-radius: 0px 1px 1px 1px;
@@ -165,6 +167,7 @@ div.bgstripe.bgstripe-animation {
 small {
     display:block;
     font-size: 12px;
+    margin-top:5px;
 }
 
 img.footer-icon{
