@@ -1,7 +1,7 @@
 {
     "name": "Pamp Internet Studio",
     "short_name": "Pamp Studio",
-    "start_url": "index.html",
+    "start_url": "index.html?666",
     "icons": [
         {
             "src": "/media/icons/planet-pink/android-chrome-192x192.png",
