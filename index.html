@@ -158,13 +158,20 @@
 <script>
         if ('serviceWorker' in navigator) {
           window.addEventListener('load', function() {
-            navigator.serviceWorker.register('/service-worker.js?2').then(function(registration) {
+            if(window.navigator.onLine){
+                navigator.serviceWorker.getRegistrations()
+                .then(function(registrations) {
+                registrations.forEach(registration => { registration.unregister()})
+                });
+            }
+        });
+            navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
               console.log('ServiceWorker registration successful with scope: ', registration.scope);
             }, function(err) {
               console.log('ServiceWorker registration failed: ', err);
             });
-          });
-        }
+          };
+        
 </script>
 
         </body>
