@@ -1,5 +1,5 @@
-var cacheHistory = ['v0','v0.01','v0.02','v0.03','v0.04','v0.05','v0.06'];
-var cacheName = 'v0.07';
+var cacheHistory = ['v0','v0.01','v0.02','v0.03','v0.04','v0.05','v0.06','v0.07'];
+var cacheName = 'v0.08';
 var urlsToCache = [
   'index.html',
   'style.css',
@@ -171,7 +171,7 @@ self.addEventListener('activate', function(event) {
     caches.keys().then(function(cacheNames) {
       return Promise.all(
         cacheNames.map(function(cacheName) {
-          if (cacheHistory.indexOf(cacheName) === -1) {
+          if (cacheHistory.indexOf(cacheName) !== -1) {
             return caches.delete(cacheName);
           }
         })
