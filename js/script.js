@@ -23,9 +23,9 @@ tabs.forEach(function(x,i){
     container.style.height='auto';
     var newHeight = container.offsetHeight;
     container.style.height=oldHeight+'px';
-    setTimeout(function(){
+    requestAnimationFrame(function() {
       container.style.height= newHeight+'px';
-    },.1)
+    });
     x.className = 'active';
   }
 })
@@ -119,7 +119,6 @@ function jumbleAnimation(elClass,intervalTime,reInit){
           el.style.fontSize = '60px';
           el.style.width = 'fit-content';
           el.style.height = 'fit-content';
-        
           elParent.classList.remove('trans-height');
           elParent.style.height = '500px';
           el.classList.remove('trans-opacity-color');
@@ -154,6 +153,9 @@ function jumbleAnimation(elClass,intervalTime,reInit){
     var randomColours = ['#6B5B95','#C3447A','#E15D44','#D65076','#EFC050','#5B5EA6','#92A8D1','#88B04B','#FF6F61','orchid','turquoise','#009B77','pink','thistle','orange','yellow','lightblue','lightgreen','mediumaquamarine','tomato','hotpink'];
     var randomColour = randomColours[Math.floor(randomColours.length*Math.random())];
     var randomColour2 = randomColours[Math.floor(randomColours.length*Math.random())];
+    while(randomColour2===randomColour){
+      randomColour2 = randomColours[Math.floor(randomColours.length*Math.random())];
+    }
     var blackOrWhite = Math.random() <= 0.5 ? 'black' : 'white';
     var blackOrWhiteOpposite = blackOrWhite == 'black' ? 'white' : 'black';
     globalRandomColor = randomColour;
@@ -167,7 +169,7 @@ function jumbleAnimation(elClass,intervalTime,reInit){
   }
 
   function init(){
-    updateFontRandomly();
+  updateFontRandomly();
   setColors();
   tabs();
   document.getElementById('regenerate-site').onclick = function(){
