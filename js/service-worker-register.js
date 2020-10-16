@@ -1,4 +1,4 @@
-var serviceWorkerVersion = serviceWorkerVersion ?? 0;
+var serviceWorkerVersion = window.serviceWorkerVersion !== undefined ? window.serviceWorkerVersion : 0;
 
 if ('serviceWorker' in navigator) {
     var swURL = "/service-worker.js?"+serviceWorkerVersion;

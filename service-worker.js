@@ -1,5 +1,4 @@
-//var cacheHistory = ['v0','v0.01','v0.02','v0.03','v0.04','v0.05','v0.06','v0.07','v0.08','v0.09','v0.10','v0.11','v0.12'];
-var version = window.serviceWorkerVersion !== undefined ? window.serviceWorkerVersion : 0;
+var version = 'v0.000';
 var urlsToCache = [
   '/',
   'style.css',
