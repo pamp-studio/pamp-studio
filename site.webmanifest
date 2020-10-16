@@ -1,7 +1,7 @@
 {
     "name": "Pamp Internet Studio",
     "short_name": "Pamp",
-    "start_url": "index.html",
+    "start_url": "index.html?0",
     "icons": [
         {
             "src": "/media/icons/veg-invert--trans-bg--192.png",
