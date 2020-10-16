@@ -157,22 +157,36 @@
 <script src="js/moireCanvas.js"></script>
 
 <script>
-        if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.getRegistrations().then(function(registrations) {
-                registrations.forEach(function(reg) {
-                        console.log(reg);
-                     //   registration.unregister()
-                })}).catch(function(err) {
-                        console.log('Service Worker registration failed: ', err);
-                });
+if ('serviceWorker' in navigator) {
+var swURL = "/service-worker.js?3";
 
-            navigator.serviceWorker.register('/service-worker.js?1').then(function(registration) {
-              console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            }, function(err) {
-              console.log('ServiceWorker registration failed: ', err);
+function register() {
+        navigator.serviceWorker.register('swURL').then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+        });
+};
+
+    if (registrations.length) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            registrations.forEach(function(reg, i) {
+                if (reg.active.scriptURL.indexOf(swURL) !== -1) {
+                        reg.unregister().then(function(bla) {
+                                if(i==registrations.length-1){
+                                        register();
+                                        location.reload(); 
+                                }
+                        });
+                    }
             });
-
-          };
+        }).catch(function(err) {
+            console.log('Service Worker unregistration failed: ', err);
+        });
+    } else {
+        register();
+    }
+};
 </script>
 
         </body>
