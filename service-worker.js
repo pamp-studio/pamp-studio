@@ -1,8 +1,7 @@
-var cacheHistory = ['v0','v0.01','v0.02','v0.03','v0.04','v0.05','v0.06','v0.07','v0.08','v0.09','v0.10','v0.11'];
-var cacheName = 'v0.12';
+//var cacheHistory = ['v0','v0.01','v0.02','v0.03','v0.04','v0.05','v0.06','v0.07','v0.08','v0.09','v0.10','v0.11','v0.12'];
+var version = window.serviceWorkerVersion !== undefined ? window.serviceWorkerVersion : 0;
 var urlsToCache = [
   '/',
-  'index.html',
   'style.css',
   'js/figlet.js',
   'js/ASCIILogoGenerator.js',
@@ -174,7 +173,7 @@ self.addEventListener('activate', function(event) {
     caches.keys().then(function(cacheNames) {
       return Promise.all(
         cacheNames.map(function(cacheName) {
-          if (cacheHistory.indexOf(cacheName) !== -1) {
+          if (cacheName!==version) {
             return caches.delete(cacheName);
           }
         })
