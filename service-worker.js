@@ -3,6 +3,7 @@ var urlsToCache = [
   '/',
   'style.css',
   'js/figlet.js',
+  'js/service-worker-register.js',
   'js/ASCIILogoGenerator.js',
   'js/script.js',
   'js/moireCanvas.js',
@@ -155,7 +156,7 @@ self.addEventListener('fetch', function(event) {
               return response;
             }
             var responseToCache = response.clone();
-            caches.open(cacheName)
+            caches.open(version)
               .then(function(cache) {
                 cache.put(event.request, responseToCache);
               });
