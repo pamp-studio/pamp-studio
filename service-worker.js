@@ -131,7 +131,7 @@ var urlsToCache = [
   "fonts/Twisted.flf"
 ]);
 
-urlsToCache = urlsToCache.map(function(url){return url+'?'+cacheName});
+urlsToCache = urlsToCache.map(function(url){return url+'?'+version});
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
