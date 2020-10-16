@@ -15,9 +15,9 @@ if ('serviceWorker' in navigator) {
                 registrations.forEach(function(reg, i) {
                     if (reg.active.scriptURL.indexOf(SW) === -1) {
                             reg.unregister().then(function() {
+                                console.log(reg.active.scriptURL, 'ServiceWorker degistration successful');
                                     if(i==registrations.length-1){
                                             register(SW);
-                                            location.reload(); 
                                     }
                             });
                         }

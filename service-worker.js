@@ -1,4 +1,4 @@
-var version = 'v0.001';
+var version = 'v0.002';
 var urlsToCache = [
   '/',
   'style.css',
