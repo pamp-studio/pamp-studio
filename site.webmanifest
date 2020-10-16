@@ -1,7 +1,7 @@
 {
     "name": "Pamp Internet Studio",
     "short_name": "Pamp",
-    "start_url": "index.html",
+    "start_url": "/",
     "version" : "v0.0003",
     "icons": [
         {
