@@ -1,7 +1,7 @@
 var serviceWorkerVersion = window.serviceWorkerVersion !== undefined ? window.serviceWorkerVersion : 0;
 
-function register() {
-    navigator.serviceWorker.register('swURL').then(function(registration) {
+function register(SW) {
+    navigator.serviceWorker.register(SW).then(function(registration) {
         console.log('ServiceWorker registration successful with scope: ', registration.scope, '. version ', serviceWorkerVersion);
     }, function(err) {
         console.log('ServiceWorker '+serviceWorkerVersion+' registration failed: ', err);
@@ -9,21 +9,21 @@ function register() {
 }
 
 if ('serviceWorker' in navigator) {
-    var swURL = "/service-worker.js?"+serviceWorkerVersion;
+    var SW = "/service-worker.js?"+serviceWorkerVersion;
             navigator.serviceWorker.getRegistrations().then(function(registrations) {
                     if (registrations.length) {
                 registrations.forEach(function(reg, i) {
-                    if (reg.active.scriptURL.indexOf(swURL) === -1) {
+                    if (reg.active.scriptURL.indexOf(SW) === -1) {
                             reg.unregister().then(function() {
                                     if(i==registrations.length-1){
-                                            register();
+                                            register(SW);
                                             location.reload(); 
                                     }
                             });
                         }
                 });
-            } else { register(); }
+            } else { register(SW); }
             }).catch(function(err) {
-                console.log('Service Worker unregistration failed: ', err);
+                console.log('Removing old registrations failed: ', err);
             });
 }
