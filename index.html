@@ -168,8 +168,9 @@ function register() {
         });
 };
 
-    if (registrations.length) {
+    
         navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                if (registrations.length) {
             registrations.forEach(function(reg, i) {
                 if (reg.active.scriptURL.indexOf(swURL) !== -1) {
                         reg.unregister().then(function(bla) {
@@ -180,12 +181,11 @@ function register() {
                         });
                     }
             });
+        } else { register(); }
         }).catch(function(err) {
             console.log('Service Worker unregistration failed: ', err);
         });
-    } else {
-        register();
-    }
+   
 };
 </script>
 
