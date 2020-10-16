@@ -1,5 +1,5 @@
-var cacheHistory = ['v0','v0.01','v0.02','v0.03','v0.04','v0.05','v0.06','v0.07','v0.08'];
-var cacheName = 'v0.09';
+var cacheHistory = ['v0','v0.01','v0.02','v0.03','v0.04','v0.05','v0.06','v0.07','v0.08','v0.09'];
+var cacheName = 'v0.10';
 var urlsToCache = [
   'index.html',
   'style.css',
@@ -130,7 +130,9 @@ var urlsToCache = [
   "fonts/THIS.flf",
   "fonts/Train.flf",
   "fonts/Twisted.flf"
-]) 
+]);
+
+urlsToCache = urlsToCache.map(function(url){return url+'?'+cacheName});
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
