@@ -143,6 +143,26 @@ section.logo-container {
     overflow: hidden;
 }
 
+ul.projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            overflow-x: hidden;
+}
+
+section.services ul.projects li {
+    width: 250px;
+    max-width:100%;
+list-style-type:none;
+}
+
+ul.projects li img{
+max-width:100%;
+}
+
 section.services ul {
     padding: 0;
     margin: 0;
